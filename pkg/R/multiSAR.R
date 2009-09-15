@@ -1,12 +1,7 @@
 multiSAR <-
-function(modelList=models,data=dat.F,nBoot=1000,verb=T,crit="Bayes") {
+function(modelList=c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull"),data=gleason,nBoot=999,verb=T,crit="Bayes") {
 
-
-############CRiteria must be "Info" for AIC/AICc or "Bayes" for BIC
-
-
-#modelList=models;data=dat.F;nBoot=1000;graph=T;verb=T
-
+############Criteria must be "Info" for AIC/AICc or "Bayes" for BIC
 nlig <- length(modelList)
 
 #Test on data points (if one richness == 0 then the data point is deleted)
@@ -41,9 +36,9 @@ names(finalVect) <- pointsNames
 
 for (i in 1:nlig){
 
-optimres = rssoptim(eval(parse(text=as.character(modelList[i]))),data,"lillie",graph,verb)
+	optimres = rssoptim(eval(parse(text=as.character(modelList[i]))),data,"lillie",graph,verb)
 
-for (j in 1:eval(parse(text=as.character(modelList[i])))$paramnumber) {optimResult[i,paste("p",j,sep="")] <- round(optimres$par[j],digits=dig)}
+	for (j in 1:eval(parse(text=as.character(modelList[i])))$paramnumber) {optimResult[i,paste("p",j,sep="")] <- round(optimres$par[j],digits=dig)}
 	optimResult[i,"AIC"] <- round(optimres$AIC,digits=dig)
 	optimResult[i,"AICc"] <- round(optimres$AICc,digits=dig)
 	optimResult[i,"BIC"] <- round(optimres$BIC,digits=dig)
@@ -53,14 +48,10 @@ for (j in 1:eval(parse(text=as.character(modelList[i])))$paramnumber) {optimResu
 	optimResult[i,"Norm p.val"] <- round(optimres$normaPval,digits=dig)
 	optimResult[i,"Pearson"] <- round(optimres$pearson,digits=dig)
 	optimResult[i,"Pea p.val"] <- round(optimres$pearpval,digits=dig)
-#	optimResult[i,"t Test"] <- round(optimres$tTest,digits=dig)
-#	optimResult[i,"t p.val"] <- round(optimres$tTestpval,digits=dig)
-	#result[i,11] <-
 
 	calculated[i,] <- optimres$calculated
 	residuals[i,] <- optimres$calculated - data$data[,2]
 	
-
 	#jacobian and Hat Matrix
 	
 	#first data Point
@@ -69,7 +60,6 @@ for (j in 1:eval(parse(text=as.character(modelList[i])))$paramnumber) {optimResu
 	for (k in 2:nPoints) {
 	jacob = rbind(jacob,jacobian( eval(parse(text=as.character(modelList[i])))$rssfun,optimres$par,data=data$data[k,],opt=F))
 	}
-	
 	
 	jacobbis <- t(jacob)%*%jacob
 	s <- svd(jacobbis)
@@ -82,14 +72,12 @@ for (j in 1:eval(parse(text=as.character(modelList[i])))$paramnumber) {optimResu
 	transResiduals[i,] <- residuals[i,] - mean(residuals[i,])
 	transResiduals[i,] <- transResiduals[i,] / sqrt( 1 - diagHatMat )
 	
-
 }#end of for
 
 names(matList) = modelList
 
 
 #Fitting validation
-
 flags <- vector("numeric",nlig)
 
 for (i in 1:nlig) { if (optimResult[i,"Norm p.val"]<0.05 || optimResult[i,"Pea p.val"]<0.05) {flags[i]<-"KO"} else {flags[i]<-"OK"}  } #|| optimResult[i,"t p.val"]<0.05
@@ -102,18 +90,15 @@ filtModelList <- modelList[flags=="OK"]
 #Models comparaison
 
 #choosing an IC criterion (AIC or AICc or BIC)
-
 if(crit == "Info") {
 	if ( (nPoints / 3) < 40 ) { IC = "AICc" } else { IC = "AIC"}
 	} else {
 	if(crit == "Bayes") { IC = "BIC" } else { stop("Criteria must be 'Info' for AIC/AICc or 'Bayes' for BIC")}
 	}
 
-cat("Choosen criterion is ",IC,"\n")
-
+if(verb) cat("Choosen criterion is ",IC,"\n")
 DeltaICvect <- vector()
 akaikeweightvect <- vector()
-
 
 filtNlig <- dim(filtOptimResult)[1]
 
@@ -139,23 +124,18 @@ columnW = paste(IC,"W",sep="")
 filtOptimResult[,columnW] <- akaikeweightvect
 
 #Averaging
-
 for (i in 1:nPoints) {
 	finalVect[i] <- sum(akaikeweightvect*filtCalculated[,i])
 }
 
 
 #Averaging validation
-
 avResiduals = data$data[[2]] - finalVect
 shapRes= shapiro.test(avResiduals)
-cat("Averaging residuals normality (p.value) : ",shapRes$p.value,"\n")
+if(verb) cat("Averaging residuals normality (p.value) : ",shapRes$p.value,"\n")
 
 cor <- cor.test(avResiduals,data$data[[1]])
-cat("Averaging residuals/X values correlation (method: ",cor$method,") (Value,p.value) : ",cor$estimate,",",cor$p.value,"\n")
-
-#transformation of residuals in order to account FOR UNEQUAL VARIANCE
-#tResiduals = (avResiduals - mean(avResiduals)) / sd(avResiduals)
+if(verb) cat("Averaging residuals/X values correlation (method: ",cor$method,") (Value,p.value) : ",cor$estimate,",",cor$p.value,"\n")
 
 ################################################################################
 #Bootstrapping residuals and model averaging
@@ -173,10 +153,10 @@ bootCalculated <- array(0,c(nlig,length(pointsNames),nBoot),dimnames=list(modelL
 #flags for fitting validation
 flags <- matrix(0,nlig,nBoot)
 
-cat("********************************************\n")
-cat(" Bootstrap Samples creation and\n")
-cat(" Model averaging on boot samples\n")
-cat("********************************************\n")
+if(verb) cat("********************************************\n")
+if(verb) cat(" Bootstrap Samples creation and\n")
+if(verb) cat(" Model averaging on boot samples\n")
+if(verb) cat("********************************************\n")
 
 
 #vector of choosen models
@@ -190,61 +170,37 @@ while (nGoodBoot < nBoot+1) {
 	test <- 1
 
 	chousModel = filtModelList[rmultinom(1, 1, akaikeweightvect)==1]
-	#cat("Multinom result :",rmultinom(1, 1, akaikeweightvect),"\n")
-	#cat("AkaikeWeights vect :",akaikeweightvect,"\n")
-	cat("Boot Sample : ",nGoodBoot," Choose model : ",chousModel,"\n")
+	if(verb) cat("Boot Sample : ",nGoodBoot," Choose model : ",chousModel,"\n")
 
 	choosenModels[nGoodBoot] = chousModel
 
    	while (test != 0 ) {
 
-		#e.star <- sample(nPoints, replace = TRUE)
-		#bootMatrix[nGoodBoot,] <- calculated[chousModel,] + transResiduals[chousModel,e.star]
-
-
 		for (l in 1:nPoints) {
-
 			positives = transResiduals[chousModel,][transResiduals[chousModel,] > 0]
 			negatives = transResiduals[chousModel,][transResiduals[chousModel,] < 0]
 
 			if (calculated[chousModel,l] > 0 ) {
 				vtci = negatives[abs(negatives) <= calculated[chousModel,l] ]
-				cat("Inf en v. abs a la valeur (",calculated[chousModel,l],"): ",vtci,"\n")
 				vtci = c(vtci,positives)
-				cat("Choosing in a vector of length ",length(vtci),"\n")
 				value = sample(vtci,1)
 			} else {
 				
-				cat("The predicted value is negative, choosing a positive superior one ...\n")
 				vtci = positives[positives >= abs(calculated[chousModel,l]) ]
-				cat("VTCI :",vtci,"\n")
 				value = sample(vtci,1)
-				cat("Predicted is ",calculated[chousModel,l]," choosen is ",value,"\n")
-
 			}
 
-
 			bootMatrix[nGoodBoot,l] <- calculated[chousModel,l] + value
-
-
 		}#end of for
 
 
 		#test if one species richness is negative
 		test=length( which(bootMatrix[nGoodBoot,]<0) )
-		cat("TEST : ",test,"\n")
-		cat("BootSample : ",bootMatrix[nGoodBoot,],"\n")
-		if (test != 0) { 
-			cat("sampled transformed residuals are : ",transResiduals[chousModel,e.star],"\n")
-			cat("Data values are : ", calculated[chousModel,],"\n")
-			cat("new data values are : ",bootMatrix[nGoodBoot,],"\n")
-		}#end of if test != 0		
 
+		if(verb) cat("BootSample : ",bootMatrix[nGoodBoot,],"\n")
+		
 
     	}#end of while
-	
-	#if ( test == 0 ) {cat("Good bootSample :",bootMatrix[i,],"\n")  } else {cat("Bad bootSample (",test,"):",bootMatrix[i,],"\n") ; i <- i-1}
-
 	
 	###########################################################
 	#Do the model averaging for each bootstrap sample
@@ -261,59 +217,42 @@ while (nGoodBoot < nBoot+1) {
 
 	if (optimres$convergence != 0) {
 		badBoot=T
-		cat("optim algorithm failed to converge (",optimres$convergence,") \n")
 	} else { 
 
-		if (sum(optimres$calculated)==0) { badBoot=T
-					   	   cat("optim algorithm failed (all 0) (",optimres$convergence,") \n")
-		} else { 
+		if (sum(optimres$calculated)==0) { badBoot=T } else { 
+			for (j in 1:eval(parse(text=as.character(modelList[k])))$paramnumber){optimBootResult[k,paste("p",j,sep=""),nGoodBoot] <- round(optimres$par[j],digits=dig)}
+			optimBootResult[k,"AIC",nGoodBoot] <- round(optimres$AIC,digits=dig)
+			optimBootResult[k,"AICc",nGoodBoot] <- round(optimres$AICc,digits=dig)
+			optimBootResult[k,"BIC",nGoodBoot] <- round(optimres$BIC,digits=dig)
+			optimBootResult[k,"RSS",nGoodBoot] <- round(optimres$value,digits=dig)
+			optimBootResult[k,"R2a",nGoodBoot] <- round(optimres$R2a,digits=dig)
+			optimBootResult[k,"Norm Stat",nGoodBoot] <- round(optimres$normaStat,digits=dig)
+			optimBootResult[k,"Norm p.val",nGoodBoot] <- round(optimres$normaPval,digits=dig)
+			optimBootResult[k,"Pearson",nGoodBoot] <- round(optimres$pearson,digits=dig)
+			optimBootResult[k,"Pea p.val",nGoodBoot] <- round(optimres$pearpval,digits=dig)
+			bootCalculated[k,,nGoodBoot] <- optimres$calculated
 
-		cat("< model >",k,"< done !\n")
-
-		for (j in 1:eval(parse(text=as.character(modelList[k])))$paramnumber){optimBootResult[k,paste("p",j,sep=""),nGoodBoot] <- round(optimres$par[j],digits=dig)}
-		optimBootResult[k,"AIC",nGoodBoot] <- round(optimres$AIC,digits=dig)
-		optimBootResult[k,"AICc",nGoodBoot] <- round(optimres$AICc,digits=dig)
-		optimBootResult[k,"BIC",nGoodBoot] <- round(optimres$BIC,digits=dig)
-		optimBootResult[k,"RSS",nGoodBoot] <- round(optimres$value,digits=dig)
-		optimBootResult[k,"R2a",nGoodBoot] <- round(optimres$R2a,digits=dig)
-		optimBootResult[k,"Norm Stat",nGoodBoot] <- round(optimres$normaStat,digits=dig)
-		optimBootResult[k,"Norm p.val",nGoodBoot] <- round(optimres$normaPval,digits=dig)
-		optimBootResult[k,"Pearson",nGoodBoot] <- round(optimres$pearson,digits=dig)
-		optimBootResult[k,"Pea p.val",nGoodBoot] <- round(optimres$pearpval,digits=dig)
-#		optimBootResult[k,"t Test",nGoodBoot] <- round(optimres$tTest,digits=dig)
-#		optimBootResult[k,"t p.val",nGoodBoot] <- round(optimres$tTestpval,digits=dig)
-		
-		bootCalculated[k,,nGoodBoot] <- optimres$calculated
-
-		#Fitting validation
-		if (optimBootResult[k,"Norm p.val",nGoodBoot]<0.05 || optimBootResult[k,"Pea p.val",nGoodBoot]<0.05 || length(which(bootCalculated[k,,nGoodBoot]<0)) !=0 ) { 
-				flags[k,nGoodBoot]<-"KO"
-		} else {
-			flags[k,nGoodBoot]<-"OK"
-		}#end of if/else on Shap and Corr
-		}#end of if/else on convergence 2
-		}#end of if/else on convergence 1
+			#Fitting validation
+			if (optimBootResult[k,"Norm p.val",nGoodBoot]<0.05 || optimBootResult[k,"Pea p.val",nGoodBoot]<0.05 || length(which(bootCalculated[k,,nGoodBoot]<0)) !=0 ) { flags[k,nGoodBoot]<-"KO"
+			} else {
+				flags[k,nGoodBoot]<-"OK"
+			}#end of if/else on Shap and Corr
+			}#end of if/else on convergence 2
+			}#end of if/else on convergence 1
 			
 	}#end of for k
 
-	###########################################################
-	#ICI un test sur les flags (si all KO BAD)
-	###########################################################
-	if ( length(which(flags[,nGoodBoot]!="KO")) == 0 ) {badBoot=T ; cat("No model pass the tests for this sample\n")}
-	if ( length(which(flags[,nGoodBoot]==0)) != 0 ) {badBoot=T ; cat("A model failed to converge\n")}
+	if ( length(which(flags[,nGoodBoot]!="KO")) == 0 ) badBoot=T
+	if ( length(which(flags[,nGoodBoot]==0)) != 0 ) badBoot=T
 
 	if (badBoot == F) { 
 			    #write the bootSample to a file
-			    bootFileName = paste("bootSamp_",data$name,".txt",sep="")
-			    bootText = paste("BootSample",nGoodBoot,"\n",sep="")
-			    cat(bootText,file = bootFileName,append=TRUE)
-			    write(bootMatrix[nGoodBoot,], file = bootFileName,ncolumns= nPoints, append = TRUE, sep = " ")
+			    #bootFileName = paste("bootSamp_",data$name,".txt",sep="")
+			    #bootText = paste("BootSample",nGoodBoot,"\n",sep="")
+			    #cat(bootText,file = bootFileName,append=TRUE)
+			    #write(bootMatrix[nGoodBoot,], file = bootFileName,ncolumns= nPoints, append = TRUE, sep = " ")
 			    nGoodBoot = nGoodBoot + 1
 	}#end of if badBoot
-
-	cat("Good Bootstrap : ",nGoodBoot,"\n")
-
-
 }#end of while
 
 
@@ -323,15 +262,10 @@ while (nGoodBoot < nBoot+1) {
 #transform 3D table to list
 filtOptimBootResult=vector("list", nBoot)
 for (i in 1:nBoot) filtOptimBootResult[[i]] <- optimBootResult[,,i]
-
 for (i in 1:nBoot) filtOptimBootResult[[i]] <- subset(filtOptimBootResult[[i]],flags[,i]=="OK")
-
-
 filtBootCalculated = vector("list", nBoot)
 for (i in 1:nBoot) filtBootCalculated[[i]] <- bootCalculated[,,i]
-
 for (i in 1:nBoot) filtBootCalculated[[i]] <- subset(filtBootCalculated[[i]],flags[,i]=="OK")
-
 
 bootHat = matrix(0,nBoot,nPoints)
 nBadBoot = 0
@@ -343,19 +277,16 @@ for (k in 1:nBoot) {
 
 	#Models comparaison
 	#choosing an IC criterion (AIC or AICc or BIC)
-
 	if(crit == "Info") {
 		if ( (nPoints / 3) < 40 ) { IC = "AICc" } else { IC = "AIC"}
 		} else {
 		if(crit == "Bayes") { IC = "BIC" } else { stop("Criteria must be 'Info' for AIC/AICc or 'Bayes' for BIC")}
 		}
 
-	cat("Choosen criterion is ",IC,"\n")
+	if(verb) cat("Choosen criterion is ",IC,"\n")
 
 	DeltaICvect <- vector()
 	akaikeweightvect <- vector()
-
-	cat("filtOptimBootResult dimensions",dim(filtOptimBootResult[[k]]) ,"\n")
 	filtNlig <- dim(filtOptimBootResult[[k]])[1]
 
 	if (filtNlig != 0) {
@@ -378,11 +309,9 @@ for (k in 1:nBoot) {
 	columnW = paste(IC,"W",sep="")
 
 	filtOptimBootResult[[k]][,columnDelta] <- round(DeltaICvect,digits=dig)
-	#filtOptimResult[,"AICcW"] <- round(akaikeweightvect,digits=5)
 	filtOptimBootResult[[k]][,columnW] <- akaikeweightvect
 
 	#Averaging
-
 	for (i in 1:nPoints) {
 		bootHat[k,i] <- sum(akaikeweightvect*filtBootCalculated[[k]][,i])
 	}#end of for i
@@ -394,7 +323,6 @@ for (k in 1:nBoot) {
 cat("Bad boot: ",nBadBoot,"\n")
 
 bootSort=apply(bootHat,2,sort)
-
 
 res=list(data=data,models=modelList,optimRes=optimResult,filtOptimRes=filtOptimResult,calculated=calculated,filtCalculated=filtCalculated,averaged=finalVect,DeltaIC=DeltaICvect,akaikeweight=akaikeweightvect,avResiduals=avResiduals,shapAvRes=shapRes,corAvRes=cor,bootMatrix=bootMatrix,optimBootResult=optimBootResult,bootCalculated=bootCalculated,flags=flags,filtOptimBootResult=filtOptimBootResult,filtBootCalculated=filtBootCalculated,bootSort=bootSort,bootHat=bootHat,bootMatrix=bootMatrix,choosenModels=choosenModels,IC=IC) 
 
