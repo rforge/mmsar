@@ -1,14 +1,16 @@
 \name{power}
-\Rdversion{1.1}
+\Rdversion{0.1}
 \alias{power}
 \docType{data}
 \title{
-%%   ~~ data name/kind ... ~~
+%%   ~~ the power law SAR model (Arrhenius 1921) ~~
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+%%  ~~ The power law SAR model is the most ancient model fitted to SARs.\cr
+
+	\tab s == c * a^z ~~
 }
-\usage{data(power)}
+\usage{the power model is an argument of the rssoptim function, it can be passed along with other models to the multiSAR function}
 \format{
   The format is:
 List of 9
@@ -29,13 +31,12 @@ List of 9
 %%  ~~ If necessary, more details than the __description__ above ~~
 }
 \source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
+%%  ~~ Arrhenius, O. 1921. Species and area. Journal of Ecology. 9: 95-99.  ~~
 }
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+%%  ~~ Arrhenius, O. 1921. Species and area. Journal of Ecology. 9: 95-99. ~~
 }
 \examples{
-data(power)
-## maybe str(power) ; plot(power) ...
+rssoptim(power,data)
 }
 \keyword{datasets}
