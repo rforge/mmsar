@@ -1,5 +1,8 @@
 multiSAR <-
-function(modelList=c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull"),data=gleason,nBoot=999,verb=T,crit="Bayes") {
+function(modelList=c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull"),data,nBoot=999,verb=F,crit="Bayes") {
+
+library(numDeriv)
+
 
 ############Criteria must be "Info" for AIC/AICc or "Bayes" for BIC
 nlig <- length(modelList)
