@@ -2,40 +2,32 @@
 \Rdversion{1.1}
 \alias{ratio}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
-}
+\title{The rational function SAR regression model}
+\description{S == (c + z * A) / (1 + f * A)}
 \usage{data(ratio)}
 \format{
   The format is:
-List of 9
- $ name       : chr "Rational function"
- $ formula    :  expression(S == over((c + z * A), (1 + f * A)))
- $ paramnumber: num 3
- $ paramnames : chr [1:3] "c" "z" "f"
- $ limits     : num [1:2, 1:3] -Inf Inf -Inf Inf -Inf ...
- $ parLim     : chr [1:3] "R" "R" "R"
- $ fun        :function (par, data)  
-  ..- attr(*, "source")= chr "function(par,data){if(length(data)>1) d=data[[1]] else d=data; s = (par[1] + par[2] * d) / (1 + par [3]*d) ; as.vector(s)}"
- $ rssfun     :function (par, data, opt)  
-  ..- attr(*, "source")= chr "function(par,data,opt){if(opt)par=backLink(par,ratio$parLim) ; sum( ( data[[2]] - ((par[1] + par[2] * data[[1]]) / (1 + par [3]"| __truncated__
- $ init       :function (data)  
-  ..- attr(*, "source")= chr "function(data){c(0,0,0)}"
+List of 8
+ $ name       : "Rational function"
+ $ formula    : expression(S == over((c + z * A), (1 + f * A)))
+ $ paramnumber: 3
+ $ paramnames : "c" "z" "f"
+ $ parLim     : "R" "R" "R"
+ $ fun        : model function
+ $ rssfun     : Residual Sum of Squares function
+ $ init       : initial values calculation
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
+\details{The rational function model (Ratkowsky, 1990) is convex asymptotic. Each parameter in the model affects several curve aspects (shape, upper asymptote and y-axis intersection).
 }
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
+\source{Ratkowsky (1990), Tjørve (2003).
 }
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+Ratkowsky, D.A. (1990) Handbook of nonlinear regression models. Marcel Dekker, New York.
+
+Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
 }
 \examples{
+#loading the ratio model object before using it
 data(ratio)
-## maybe str(ratio) ; plot(ratio) ...
 }
-\keyword{datasets}
+\keyword{mmSAR model object, non linear regression}

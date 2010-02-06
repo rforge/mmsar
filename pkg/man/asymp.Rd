@@ -2,40 +2,32 @@
 \Rdversion{1.1}
 \alias{asymp}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
-}
+\title{The asymptotic SAR regression model}
+\description{S == c - z * f^A}
 \usage{data(asymp)}
 \format{
   The format is:
-List of 9
- $ name       : chr "asymptotic regression"
- $ formula    :  expression(S == c - z * f^A)
- $ paramnumber: num 3
- $ paramnames : chr [1:3] "c" "z" "f"
- $ limits     : num [1:2, 1:3] 0 Inf 0 Inf 0 ...
- $ parLim     : chr [1:3] "Rplus" "Rplus" "unif"
- $ fun        :function (par, data)  
-  ..- attr(*, "source")= chr "function(par,data){if(length(data)>1) d=data[[1]] else d=data; s = par[1] - par[2] * par[3]^data[[1]]; as.vector(s)}"
- $ rssfun     :function (par, data, opt)  
-  ..- attr(*, "source")= chr "function(par,data,opt){if(opt)par=backLink(par,asymp$parLim) ; sum( ( data[[2]] - (par[1] - par[2] * par[3]^data[[1]]) )^2  ) }"| __truncated__
- $ init       :function (data)  
-  ..- attr(*, "source")= chr [1:10] "function(data){#Ratkowsky 1983 p178" ...
+List of 8
+ $ name       : "asymptotic regression"
+ $ formula    : expression(S == c - z * f^A)
+ $ paramnumber: 3
+ $ paramnames : "c" "z" "f"
+ $ parLim     : "Rplus" "Rplus" "unif"
+ $ fun        : model function
+ $ rssfun     : Residual Sum of Squares function
+ $ init       : initial values calculation from Ratkowsky (1983) p178
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
+\details{This model is convex asymptotic. Parameter c is the upper asymptote.
 }
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
+\source{Tjørve (2003).}
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+Ratkowsky, D.A. (1983) Nonlinear regression modelling: a unified approach. Marcel Dekker, New York.
+
+Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
+
 }
 \examples{
+#loading the asymp model object before using it
 data(asymp)
-## maybe str(asymp) ; plot(asymp) ...
 }
-\keyword{datasets}
+\keyword{mmSAR model object, non linear regression}

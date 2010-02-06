@@ -2,40 +2,36 @@
 \Rdversion{1.1}
 \alias{negexpo}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
-}
+\title{The negative exponential SAR regression model}
+\description{s == c * (1 - exp(-z * a))}
 \usage{data(negexpo)}
 \format{
   The format is:
-List of 9
- $ name       : chr "Negative exponential"
- $ formula    :  expression(s == c * (1 - exp(-z * a)))
- $ paramnumber: num 2
- $ paramnames : chr [1:2] "c" "z"
- $ limits     : num [1:2, 1:2] 0 Inf 0 1
- $ parLim     : chr [1:2] "Rplus" "unif"
- $ fun        :function (par, data)  
-  ..- attr(*, "source")= chr "function(par,data){if(length(data)>1) d=data[[1]] else d=data; s = par[1]*(1 - exp(-par[2]*d)) ; names(s)=c(\"s.negexpo\"); as."| __truncated__
- $ rssfun     :function (par, data, opt)  
-  ..- attr(*, "source")= chr "function(par,data,opt){if(opt)par=backLink(par,negexpo$parLim) ; sum( ( data[[2]] -  par[1] * (1 - exp(-par[2] * data[[1]]) ) )"| __truncated__
- $ init       :function (data)  
-  ..- attr(*, "source")= chr "function(data){c=max(data[[2]]); Z=( -log( (-data[[2]]/(max(data[[2]])+1))+1))/data[[1]]; z = mean(Z); c(c,z)}"
+List of 8
+ $ name       : "Negative exponential"
+ $ formula    : expression(s == c * (1 - exp(-z * a)))
+ $ paramnumber: 8
+ $ paramnames : "c" "z"
+ $ parLim     : "Rplus" "unif"
+ $ fun        : model function
+ $ rssfun     : Residual Sum of Squares function
+ $ init       : initial values calculation
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
+\details{The negative exponential model is convex asymptotic.
 }
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
+\source{Holdridge et al. (1971), Miller & Wiegert (1989), Ratkowsky (1990), Tjørve (2003).
 }
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+Holdridge, L.R., Grenke, W.C., Hatheway, W.H., Liang, T. & Tosi, J.A. (1971) Forest environments in tropical life zones. Pergamon Press, Oxford.
+
+Miller, R.I. & Wiegert, R.G. (1989) Documenting completeness, species–area relations, and the species abundance distribution of a regional flora. Ecology, 70, 16–22.
+
+Ratkowsky, D.A. (1990) Handbook of nonlinear regression models. Marcel Dekker, New York.
+
+Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
 }
 \examples{
+#loading the negexpo model object before using it
 data(negexpo)
-## maybe str(negexpo) ; plot(negexpo) ...
 }
-\keyword{datasets}
+\keyword{mmSAR model object, non linear regression}

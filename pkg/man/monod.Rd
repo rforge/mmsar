@@ -2,40 +2,32 @@
 \Rdversion{1.1}
 \alias{monod}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
-}
+\title{The Monod function SAR regression model}
+\description{s == c * a /z + a}
 \usage{data(monod)}
 \format{
   The format is:
-List of 9
- $ name       : chr "Monod"
- $ formula    :  expression(s == over(c * a, z + a))
- $ paramnumber: num 2
- $ paramnames : chr [1:2] "c" "z"
- $ limits     : num [1:2, 1:2] 0 Inf 0 Inf
- $ parLim     : chr [1:2] "Rplus" "Rplus"
- $ fun        :function (par, data)  
-  ..- attr(*, "source")= chr "function(par,data){if(length(data)>1) d=data[[1]] else d=data; s = (par[1]*d) / (par[2]+d) ; names(s)=c(\"s.monod\"); as.vector"| __truncated__
- $ rssfun     :function (par, data, opt)  
-  ..- attr(*, "source")= chr "function(par,data,opt){if(opt)par=backLink(par,monod$parLim) ; sum( ( data[\"s\"] -  (par[1]*data[\"a\"]) / (par[2]+data[\"a\"]"| __truncated__
- $ init       :function (data)  
-  ..- attr(*, "source")= chr [1:12] "function(data){" ...
+List of 8
+ $ name       : "Monod"
+ $ formula    : expression(s == over(c * a, z + a))
+ $ paramnumber: 2
+ $ paramnames : "c" "z"
+ $ parLim     : "Rplus" "Rplus"
+ $ fun        : model function
+ $ rssfun     : Residual Sum of Squares function
+ $ init       : initial values calculation
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
+\details{The Monod function SAR model is convex asymptotic.
 }
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
+\source{Monod (1950), Tjørve (2003).
 }
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+Monod, J. (1950) La technique de culture continue, the´orie et applications. Annales de l’Institut Pasteur, 79, 390–410.
+
+Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
 }
 \examples{
+#loading the monod model object before using it
 data(monod)
-## maybe str(monod) ; plot(monod) ...
 }
-\keyword{datasets}
+\keyword{mmSAR model object, non linear regression}

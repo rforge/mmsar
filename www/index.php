@@ -43,7 +43,7 @@ echo $contents; } ?>
 
 <!-- end of project description -->
 
-
+<p> The <strong>project summary page</strong> you can find <a href="http://<?php echo $domain; ?>/projects/<?php echo $group_name; ?>/"><strong>here</strong></a>. </p>
 <br/>
 <strong>Installing and loading mmSAR</strong>
 <br/>
@@ -246,14 +246,7 @@ this will have for effect to load the power model object in the R workspace. Par
 return the following :
 <br/>
 <code>expression(s == c * a^z)</code>
-
-
-
-
-
-
-
-<p> The <strong>project summary page</strong> you can find <a href="http://<?php echo $domain; ?>/projects/<?php echo $group_name; ?>/"><strong>here</strong></a>. </p>
-
+<br/>
+<br/><br/><br/>
 </body>
 </html>

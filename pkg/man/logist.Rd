@@ -2,42 +2,33 @@
 \Rdversion{1.1}
 \alias{logist}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
-}
+\title{The logistic SAR regression model}
+\description{S == over(c, (1 + exp(-z * A + f)))}
 \usage{data(logist)}
 \format{
   The format is:
-List of 10
- $ name       : chr "Logistic function"
- $ formula    :  expression(S == over(c, (1 + exp(-z * A + f))))
- $ Formula    :Class 'formula' length 3 s ~ over(par1, (1 + exp(-par2 * a + par3)))
-  .. ..- attr(*, ".Environment")=<environment: R_GlobalEnv> 
- $ paramnumber: num 3
- $ paramnames : chr [1:3] "c" "z" "f"
- $ limits     : num [1:2, 1:3] 0 Inf 0 Inf -Inf ...
- $ parLim     : chr [1:3] "Rplus" "Rplus" "R"
- $ fun        :function (par, data)  
-  ..- attr(*, "source")= chr "function(par,data){if(length(data)>1) d=data[[1]] else d=data; s = par[1] / (1 + exp(-par[2]*d+par[3])) ; as.vector(s)}"
- $ rssfun     :function (par, data, opt)  
-  ..- attr(*, "source")= chr "function(par,data,opt){if(opt)par=backLink(par,logist$parLim) ; sum( ( data[[2]] - (par[1] / (1 + exp(-par[2]*data[[1]]+par[3])"| __truncated__
- $ init       :function (data)  
-  ..- attr(*, "source")= chr [1:14] "function(data){" ...
+List of 8
+ $ name       : "Logistic function"
+ $ formula    : expression(S == over(c, (1 + exp(-z * A + f))))
+ $ paramnumber: 3
+ $ paramnames : "c" "z" "f"
+ $ parLim     : "Rplus" "Rplus" "R"
+ $ fun        : model function
+ $ rssfun     : Residual Sum of Squares function
+ $ init       : initial values calculation
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
+\details{This model is sigmoid asymptotic. Parameter c is the upper asymptote. The function is symmetrical about the inflection point. The curve has a lower asymptote of zero, and the intersection with the y-axis depends on all three parameters. Thus it never goes through the origin.
 }
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
+\source{Ratkowsky (1990), Tjørve (2003).
 }
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+
+Ratkowsky, D.A. (1990) Handbook of nonlinear regression models. Marcel Dekker, New York.
+
+Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
 }
 \examples{
+#loading the logist model object before using it
 data(logist)
-## maybe str(logist) ; plot(logist) ...
 }
-\keyword{datasets}
+\keyword{mmSAR model object, non linear regression}
