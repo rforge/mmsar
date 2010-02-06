@@ -34,4 +34,5 @@ Tjørve, E. (2003) Shapes and functions of species–area curves: a review of po
 #loading the expo model object before using it
 data(expo)
 }
-\keyword{mmSAR model object, non linear regression}
+\keyword{mmSAR model object}
+\keyword{non linear regression}

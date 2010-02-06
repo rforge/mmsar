@@ -30,4 +30,5 @@ Tjørve, E. (2003) Shapes and functions of species–area curves: a review of po
 #loading the asymp model object before using it
 data(asymp)
 }
-\keyword{mmSAR model object, non linear regression}
+\keyword{mmSAR model object}
+\keyword{non linear regression}

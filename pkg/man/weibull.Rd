@@ -32,4 +32,5 @@ Weibull, W. (1951) A statistical distribution function of wide applicability. Jo
 #loading the weibull model object before using it
 data(weibull)
 }
-\keyword{mmSAR model object, non linear regression}
+\keyword{mmSAR model object}
+\keyword{non linear regression}

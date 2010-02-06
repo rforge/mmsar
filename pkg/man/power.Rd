@@ -39,4 +39,5 @@ List of 9
 \examples{
 rssoptim(power,data)
 }
-\keyword{datasets}
+\keyword{mmSAR model object}
+\keyword{non linear regression}
