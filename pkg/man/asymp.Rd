@@ -1,5 +1,4 @@
 \name{asymp}
-\Rdversion{1.1}
 \alias{asymp}
 \docType{data}
 \title{The asymptotic SAR regression model}
