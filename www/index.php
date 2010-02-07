@@ -23,7 +23,7 @@
 
 						<p algn="justify">The mmSAR package implements the multimodel SAR paradigm and provides ecologists with user friendly functions fit SAR models and calculate multimodel SAR inference.</p>
 
-						<p class="large text-center"><a href="documentation_home.html">browse the online documentation</a> <span class="text-separator">|</span> <a href="http://r-forge.r-project.org/R/?group_id=514">Download</a> </p>
+						<p class="large text-center"><a href="documentation_home.php">browse the online documentation</a> <span class="text-separator">|</span> <a href="http://r-forge.r-project.org/R/?group_id=514">Download</a> </p>
 
 					</div>
 

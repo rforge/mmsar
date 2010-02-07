@@ -25,7 +25,7 @@
 	<div class="center-wrapper">
 
 		<div class="left">
-			The web site is &copy; 2009 <a href="htt://www.ecolag.univ-montp2.fr/fguilhaumon" target="_new">François Guilhaumon</a> - mmSAR is <a href="http://www.gnu.org/licenses/gpl.html" target="_new">GNU/GPL</a> feel free to use it and <a href="http://r-forge.r-project.org/projects/mmsar/" target="_new">contribute</a> to it ! 
+			The web site is &copy; 2009 <a href="http://www.ecolag.univ-montp2.fr/fguilhaumon" target="_new">François Guilhaumon</a> - mmSAR is <a href="http://www.gnu.org/licenses/gpl.html" target="_new">GNU/GPL</a> feel free to use it and <a href="http://r-forge.r-project.org/projects/mmsar/" target="_new">contribute</a> to it ! 
 		</div>
 
 		<div class="right">
