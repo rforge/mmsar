@@ -17,7 +17,7 @@ List of 8
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation
 }
-\details{The lomolino model is sigmoid asymptotic. Parameter c is the upper asymptote.
+\details{The lomolino model is sigmoid asymptotic. Parameter c is the upper asymptote. For further details and documentation please see the online documentation at http://mmsar.r-forge.r-project.org/
 }
 \source{Lomolino, M.V. (2000), Tjørve (2003).
 }

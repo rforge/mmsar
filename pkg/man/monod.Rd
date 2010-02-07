@@ -17,7 +17,7 @@ List of 8
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation
 }
-\details{The Monod function SAR model is convex asymptotic.
+\details{The Monod function SAR model is convex asymptotic. For further details and documentation please see the online documentation at http://mmsar.r-forge.r-project.org/
 }
 \source{Monod (1950), Tjørve (2003).
 }

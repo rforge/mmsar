@@ -17,7 +17,7 @@ List of 8
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation
 }
-\details{The negative exponential model is convex asymptotic.
+\details{The negative exponential model is convex asymptotic. For further details and documentation please see the online documentation at http://mmsar.r-forge.r-project.org/
 }
 \source{Holdridge et al. (1971), Miller & Wiegert (1989), Ratkowsky (1990), Tjørve (2003).
 }

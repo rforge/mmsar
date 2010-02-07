@@ -17,7 +17,7 @@ List of 8
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation from Ratkowsky (1983) p178
 }
-\details{This model is convex asymptotic. Parameter c is the upper asymptote.
+\details{This model is convex asymptotic. Parameter c is the upper asymptote. For further details and documentation please see the online documentation at http://mmsar.r-forge.r-project.org/
 }
 \source{Tjørve (2003).}
 \references{
