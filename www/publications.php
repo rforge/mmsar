@@ -45,7 +45,7 @@ species-area relationship inference - <i>under review</i></p>
 							<li><p class="large">Burnham KP, Anderson DR. 2002. Model Selection and Multimodel Inference: A Practical Information-Theoretic Approach (Springer, New York), 2nd Ed.</p></li>
 
 
-<li><p class="large">Preston, F. W. 1962. The Canonical Distribution of Commonness and Rarity: Part I. – Ecology 43:185-215.</p></li>
+<li><p class="large">Preston FW 1962. The Canonical Distribution of Commonness and Rarity: Part I. – Ecology 43:185-215.</p></li>
 						</ul>
 
 

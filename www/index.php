@@ -28,7 +28,7 @@
 					</div>
 
 					<div class="right" style="width: 450px ; text-align: center">
-						<img src="fig_home.png" alt="example multimodelSAR" class="bordered"/><br/><p style="font-size: 0.8em">non linear SAR model fits, multimodel SAR and non parametric confidence interval for a species-area dataset describing the plants of the Galapagos Islands (<a href="publications.php">Preston, 1962</a>)</p>
+						<img src="fig_home.png" alt="example multimodelSAR" class="bordered"/><br/><p style="font-size: 0.8em">non linear SAR model fits, multimodel SAR and non parametric confidence interval for a species-area data set describing the plants of the Galapagos Islands (<a href="publications.php">Preston, 1962</a>)</p>
 					</div>
 
 					<div class="clearer">&nbsp;</div>

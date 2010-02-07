@@ -5,7 +5,7 @@
 		<div id="footer">
 
 			<div class="left">
-				<a href="index.html">Home</a> <span class="text-separator">|</span> <a href="documentation_home.html">Documentation</a> <span class="text-separator">|</span> <a href="publications.html">Publications</a> <span class="text-separator">|</span>
+				<a href="index.php">Home</a> <span class="text-separator">|</span> <a href="documentation_home.php">Documentation</a> <span class="text-separator">|</span> <a href="publications.php">Publications</a> <span class="text-separator">|</span>
 			</div>
 
 			<div class="right">
@@ -25,7 +25,7 @@
 	<div class="center-wrapper">
 
 		<div class="left">
-			The web site is &copy; 2009 <a href="http://www.ecolag.univ-montp2.fr/fguilhaumon" target="_new">François Guilhaumon</a> - mmSAR is <a href="http://www.gnu.org/licenses/gpl.html" target="_new">GNU/GPL</a> feel free to use it and <a href="http://r-forge.r-project.org/projects/mmsar/" target="_new">contribute</a> to it ! <a href="http://www.xiti.com/xiti.asp?s=446326" title="WebAnalytics" target="_top">
+			The web site is &copy; 2010 <a href="http://www.ecolag.univ-montp2.fr/fguilhaumon" target="_new">François Guilhaumon</a> - mmSAR is <a href="http://www.gnu.org/licenses/gpl.html" target="_new">GNU/GPL</a> feel free to use it and <a href="http://r-forge.r-project.org/projects/mmsar/" target="_new">contribute</a> to it ! <a href="http://www.xiti.com/xiti.asp?s=446326" title="WebAnalytics" target="_top">
 <script type="text/javascript">
 <!--
 Xt_param = 's=446326&p=index';

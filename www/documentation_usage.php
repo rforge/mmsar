@@ -52,7 +52,7 @@ data(power)<br/>data(expo)<br/>data(negexpo)<br/>data(monod)<br/>data(ratio)<br/
 #loading the Galapagos Islands plants data set (<a href="publications.html">Preston, 1962</a>)<br/>
 data(data.glap)<br/><br/>
 #creating a vector of model names<br/>
-mods = c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull")<br/><br/>
+mods <- c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull")<br/><br/>
 #fitting all the models to the Galapagos dataset and perform multimodel averaging<br/>
 resAverage <- multiSAR(modelList=mods,data.galap)<br/> </div><br/>
 											
