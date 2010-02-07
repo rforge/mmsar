@@ -21,9 +21,9 @@
 
 						<p class="large">mmSAR is an <a href="http://www.r-project.org/R" target="_new">R</a> package for the modelling of the Species-Area Relationship (SAR).</p>
 
-						<p align="justify">The mmSAR package implements the multimodel SAR paradigm and provides ecologists with user friendly functions fit SAR models and calculate multimodel SAR inference.</p>
+						<p align="justify">The mmSAR package implements the multimodel SAR paradigm and provides ecologists with user friendly functions to fit SAR models and calculate multimodel SAR inference.</p>
 
-						<p class="large text-center"><a href="documentation_home.php">browse the online documentation</a> <span class="text-separator">|</span> <a href="http://r-forge.r-project.org/R/?group_id=514">Download</a> </p>
+						<p class="large text-center"><a href="documentation_home.php">Browse the online documentation</a> <span class="text-separator">|</span> <a href="http://r-forge.r-project.org/R/?group_id=514">Download</a> </p>
 
 					</div>
 
@@ -69,9 +69,10 @@
 						<div class="clearer">&nbsp;</div>
 
 						<ul class="nice-list">
-							<li><span>2010-02-7 |</span> mmSAR online documentation launched.</li>
-
-							<li><span>2010-02-6 |</span> Major update in mmSAR documentation files.</li>
+<li><span>2010-02-8 |</span> data sets manpages fix. The package should compile for windows on the 2010-02-9 </li>
+<li><span>2010-02-7 |</span> mmSAR online documentation launched.</li>
+<li><span>2010-02-6 |</span> Major update in mmSAR documentation files.</li>
+							
 						</ul>
 												
 						

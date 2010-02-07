@@ -31,7 +31,7 @@ data.galap<br/>
 data.glea<br/>
 data.gleas<br/>
 </div>
-							<p class="large">mmSAR handle SAR data sets as list-objects. A data set is a list of 2 elements :
+							<p class="large">mmSAR handles SAR data sets as list-objects. A data set is a list of 2 elements :
 <br/>
 <ul>
 	<li><b>$name</b> : a character string specifying the name of the data set</li><br/>
