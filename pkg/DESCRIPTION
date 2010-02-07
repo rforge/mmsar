@@ -1,7 +1,7 @@
 Package: mmSAR
 Type: Package
 Title: mmSAR is an R package for the modelling of the Species-Area Relationship (SAR).
-Version: 0.1
+Version: 1.0
 Date: 2009-09-01
 Author: François Guilhaumon
 Maintainer: François Guilhaumon <francois.guilhaumon@univ-montp2.fr>
