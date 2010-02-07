@@ -22,13 +22,13 @@
 <br/>
 						<div class="post-body">
 
-							<p align="center"><img src="doc_home.png" width="640" alt="" class="bordered" /><br/>Objects of the mmSAR package (data sets, models, optimization function and model averagin function).</p>
+							<p align="center"><img src="doc_home.png" width="640" alt="" class="bordered" /><br/>Objects of the mmSAR package (data sets, models, optimization function and model averaging function).</p>
 <br/>
 							<h2 class="quiet">mmSAR overview</h2>
 						
 							<p class="large">mmSAR is a flexible and scalable implementation of the multimodel SAR framework for species-area datasets (<a href="publications.html">Guilhaumon et al. 2008</a>). </p>
 							
-							<p class="large">mmSAR implements the basic bricks of the multimodel inference paradigm (<a href="publications.html">Burnham & Anderson, 2002</a>) with simple R list-objects and functions. The package is scalable and users can easily create their own model and data objects.</p>
+							<p class="large">mmSAR implements the basic elements of the multimodel inference paradigm (<a href="publications.html">Burnham & Anderson, 2002</a>) with simple R list-objects and functions. The package is scalable and users can easily create their own model and data objects.</p>
 							
 							<p class="large">If you are new to multimodel inference or non linear SAR fitting, a good start is the <a href="publications.html">Guilhaumon et al. (2008)</a> paper (freely available at the PNAS website), particularly the methods section and the supplementary material <a href="http://www.pnas.org/content/suppl/2008/10/01/0803610105.DCSupplemental/0803610105SI.pdf" target="_blank" title="link to supporting information at the PNAS website"><img src="pdf.png" alt="link to supporting information at the PNAS website" title="link to supporting information at the PNAS website" align="bottom" height="16" width="16"></a>.</p>
 
@@ -83,45 +83,6 @@ Although mmSAR is user friendly, the knowledge of some concepts such as <i>funct
 	</div>
 </div>
 
-<div id="footer-wrapper">
 
-	<div class="center-wrapper">
 
-		<div id="footer">
-
-			<div class="left">
-				<a href="index.html">Home</a> <span class="text-separator">|</span> <a href="documentation_home.html">Documentation</a><span class="text-separator">|</span><a href="publications.html">Publications</a><span class="text-separator">|</span>
-			</div>
-
-			<div class="right">
-				<a href="#">Top ^</a>
-			</div>
-			
-			<div class="clearer">&nbsp;</div>
-
-		</div>
-
-	</div>
-
-</div>
-
-<div id="bottom">
-
-	<div class="center-wrapper">
-
-		<div class="left">
-			&copy; 2009 François Guilhaumon - mmSAR is GPL feel free to use it and contribute to it.<span class="text-separator">|</span>
-		</div>
-
-		<div class="right">
-			<a href="http://templates.arcsin.se/">Website template</a> by <a href="http://arcsin.se/">Arcsin</a> 
-		</div>
-		
-		<div class="clearer">&nbsp;</div>
-
-	</div>
-
-</div>
-
-</body>
-</html>
+<?php include('footer.php'); ?> 

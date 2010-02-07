@@ -22,7 +22,7 @@
 <br/>
 						<div class="post-body">
 
-	<p class="large">To install the mmSAR package directly within R type:</p>
+	<p class="large">To install the mmSAR package directly within R :</p>
 
 <div class="success">install.packages("mmSAR", repos="http://R-Forge.R-project.org")</div>
 														
@@ -30,7 +30,7 @@
 
 <div class="success">install.packages("mmSAR", repos="http://R-Forge.R-project.org", lib="myPackagesDirectoryPath")</div>
 
-				<p class="large">After that when loading the mmSAR package, use the 'lib.loc' argument of the 'library' function to find the package :</p>
+				<p class="large">After, when loading the mmSAR package, use the 'lib.loc' argument of the 'library' function to find the package :</p>
 
 <div class="success">library(mmSAR, lib.loc="myPackagesDirectoryPath")</div>
 										
@@ -79,45 +79,6 @@
 	</div>
 </div>
 
-<div id="footer-wrapper">
 
-	<div class="center-wrapper">
 
-		<div id="footer">
-
-			<div class="left">
-				<a href="index.html">Home</a> <span class="text-separator">|</span> <a href="documentation_home.html">Documentation</a><span class="text-separator">|</span><a href="publications.html">Publications</a><span class="text-separator">|</span>
-			</div>
-
-			<div class="right">
-				<a href="#">Top ^</a>
-			</div>
-			
-			<div class="clearer">&nbsp;</div>
-
-		</div>
-
-	</div>
-
-</div>
-
-<div id="bottom">
-
-	<div class="center-wrapper">
-
-		<div class="left">
-			&copy; 2009 François Guilhaumon - mmSAR is GPL feel free to use it and contribute to it.<span class="text-separator">|</span>
-		</div>
-
-		<div class="right">
-			<a href="http://templates.arcsin.se/">Website template</a> by <a href="http://arcsin.se/">Arcsin</a> 
-		</div>
-		
-		<div class="clearer">&nbsp;</div>
-
-	</div>
-
-</div>
-
-</body>
-</html>
+<?php include('footer.php'); ?> 

@@ -60,26 +60,5 @@ species-area relationship inference - <i>under review</i></p>
 	</div>
 </div>
 
-<div id="footer-wrapper">
-
-	<div class="center-wrapper">
-
-		<div id="footer">
-
-			<div class="left">
-				<a href="index.html">Home</a> <span class="text-separator">|</span> <a href="documentation_home.html">Documentation</a><span class="text-separator">|</span><a href="publications.html">Publications</a><span class="text-separator">|</span>
-			</div>
-
-			<div class="right">
-				<a href="#">Top ^</a>
-			</div>
-			
-			<div class="clearer">&nbsp;</div>
-
-		</div>
-
-	</div>
-
-</div>
 
 <?php include('footer.php'); ?> 
