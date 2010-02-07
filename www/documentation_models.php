@@ -100,7 +100,7 @@
 </p>
 
 
-							<p class="large">mmSAR handle SAR models as list-objects. A model is a list of 8 elements (examples ar given for the exponential model) :<br/>
+							<p class="large">mmSAR handles SAR models as list-objects. A model is a list of 8 elements (examples ar given for the exponential model) :<br/>
 <br/>
 <ul>
 	<li><b>$name</b> : a character string specifying the name of the model (ex: "expo")</li><br/>
@@ -110,7 +110,7 @@
 	<li><b>$parLim </b>: a vector of character string of length $paramnumber specifying the parameters limits from 'R' for (-&#8734;;+&#8734;), 'Rplus' for [0;+&#8734;) or 'unif' for [0;1] (ex: c("R","Rplus")) </li><br/>
 	<li><b>$fun</b> : an R function corresponding to the model function (ex : function(par,data){if(length(data)>1) d=data[[1]] else d=data; s = par[2] * log(d) + par[1]; names(s)=c("s.expo"); as.vector(s)} )</li><br/>
 	<li><b>$rssfun </b>    : an R function corresponding to the model Residual Sum of Squares function (ex : function(par,data,opt){if(opt)par=backLink(par,expo$parLim) ; sum(   (data[[2]] - (par[2] * log(data[[1]]) + par[1]) ) ^2     ) } )</li><br/>
-	<li><b>$init </b>      : an R function corresponding to an initial values calculation for the fitting algorithm, this is a model specific function as $fun adn $rssfun (ex: function(data){semilog.data = data.frame(log(data[[1]]),data[[2]]) ; names(semilog.data)=c("a","s") ; par=lm(s~a,semilog.data)$coefficients ; names(par)=c("c","z") ; par } )</li><br/>
+	<li><b>$init </b>      : an R function corresponding to an initial values calculation for the fitting algorithm, this is a model specific function as $fun and $rssfun (ex: function(data){semilog.data = data.frame(log(data[[1]]),data[[2]]) ; names(semilog.data)=c("a","s") ; par=lm(s~a,semilog.data)$coefficients ; names(par)=c("c","z") ; par } )</li><br/>
 </ul>
 </p>
 							
