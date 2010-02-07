@@ -5,7 +5,7 @@
 			<div id="header">
 
 				<div id="logo">
-					<h1 id="site-title"><a href="#">mmSAR <span>R-package</span></a></h1>
+					<h1 id="site-title"><a href="http://mmsar.r-forge.r-project.org/">mmSAR <span>R-package</span></a></h1>
 					<h2 id="site-slogan">multimodel Species-Area Relationships</h2>
 				</div>
 
