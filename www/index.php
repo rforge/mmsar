@@ -31,9 +31,54 @@
 						<img src="fig_home.png" alt="example multimodelSAR" class="bordered"/>
 					</div>
 
+					<div class="clearer">&nbsp;</div>
 
 
 </div>
+</div>
+			<div id="main">
+
+				<div class="separator-vertical">
+
+
+				<div class="col2 left">
+
+						<h2 class="left">Download the documentation</h2>
+											
+						<div class="clearer">&nbsp;</div>
+
+						<div class="content-separator"></div>
+
+						<a href="http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/pkg/inst/doc/mmSAR.pdf?rev=26&root=mmsar"><img src="PDF-icon.png" alt="" class="left bordered" /></a>
+
+						<h3><a href="http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/pkg/inst/doc/mmSAR.pdf?rev=26&root=mmsar">Download</a></h3>
+						
+						<p>Download the documentation as a PDF file.</p>
+
+						<div class="clearer">&nbsp;</div>
+
+						<div class="content-separator"></div>
+						
+						<div class="clearer">&nbsp;</div>
+
+				</div>
+
+				<div class="col2 right">
+
+						<h2 class="left">News</h2>
+						<div class="clearer">&nbsp;</div>
+
+						<ul class="nice-list">
+							<li><span>2010-02-7 |</span> mmSAR online documentation launched.</li>
+
+							<li><span>2010-02-6 |</span> Major update in mmSAR documentation files.</li>
+						</ul>
+												
+						
+				</div>
+
+
+
 					<div class="clearer">&nbsp;</div>
 
 				</div>
