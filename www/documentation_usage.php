@@ -50,7 +50,7 @@ res <- rssoptim(expo,data.galap)<br/> </div><br/>
 <div class="success">#loading all available models<br/>
 data(power)<br/>data(expo)<br/>data(negexpo)<br/>data(monod)<br/>data(ratio)<br/>data(logistic)<br/>data(lomolino)<br/>data(weibull)<br/><br/>
 #loading the Galapagos Islands plants data set (<a href="publications.html">Preston, 1962</a>)<br/>
-data(data.glap)<br/><br/>
+data(data.galap)<br/><br/>
 #creating a vector of model names<br/>
 mods <- c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull")<br/><br/>
 #fitting all the models to the Galapagos dataset and perform multimodel averaging<br/>
