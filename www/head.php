@@ -13,7 +13,7 @@
 				<div id="help-wrapper">
 					<div id="help">
 
-						<a href="http://r-forge.r-project.org/projects/mmsar/" target="_new">project summary at the R-Forge</a>
+						<a href="http://r-forge.r-project.org/projects/mmsar/" target="_new">project summary at the <font style="color: #2F9ECA">R</font>-Forge</a>
 
 					</div>
 				</div>
