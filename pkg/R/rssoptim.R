@@ -130,7 +130,7 @@ function(model,data,norTest="lillie",verb=T){
 	}#end of if verb
 
     res3 = list(AIC=AIC, AICc=AICc, BIC=BIC, R2=R2)
-    res = c(res1,list(pearson=cor$estimate,pearpval=cor$p.value,normaTest=norTest,normaStat=normaTest$statistic,normaPval=normaTest$p.value,res2,res3,list(data.name=data.name))
+    res = c(res1,list(pearson=cor$estimate,pearpval=cor$p.value,normaTest=norTest,normaStat=normaTest$statistic,normaPval=normaTest$p.value),res2,res3,list(data.name=data.name))
    
 invisible(res)
 
