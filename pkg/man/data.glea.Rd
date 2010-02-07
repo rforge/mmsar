@@ -2,8 +2,7 @@
 \Rdversion{1.1}
 \alias{data.glea}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
+\title{Gleason (1922)
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~

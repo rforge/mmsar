@@ -2,8 +2,7 @@
 \Rdversion{1.1}
 \alias{data.arr}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
+\title{Arrhenius (1921)
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~

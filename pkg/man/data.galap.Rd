@@ -2,8 +2,7 @@
 \Rdversion{1.1}
 \alias{data.galap}
 \docType{data}
-\title{
-%%   ~~ data name/kind ... ~~
+\title{Preston 1962 (galapagos)
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
