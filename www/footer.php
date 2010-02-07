@@ -28,7 +28,7 @@
 			The web site is &copy; 2009 <a href="http://www.ecolag.univ-montp2.fr/fguilhaumon" target="_new">François Guilhaumon</a> - mmSAR is <a href="http://www.gnu.org/licenses/gpl.html" target="_new">GNU/GPL</a> feel free to use it and <a href="http://r-forge.r-project.org/projects/mmsar/" target="_new">contribute</a> to it ! <a href="http://www.xiti.com/xiti.asp?s=446326" title="WebAnalytics" target="_top">
 <script type="text/javascript">
 <!--
-Xt_param = 's=446326&p=';
+Xt_param = 's=446326&p=index';
 try {Xt_r = top.document.referrer;}
 catch(e) {Xt_r = document.referrer; }
 Xt_h = new Date();
@@ -41,7 +41,7 @@ document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'" tit
 //-->
 </script>
 <noscript>
-Mesure d'audience ROI statistique webanalytics par <img width="80" height="15" src="http://logv11.xiti.com/g.xiti?s=446326&p=" alt="WebAnalytics" />
+Mesure d'audience ROI statistique webanalytics par <img width="80" height="15" src="http://logv11.xiti.com/g.xiti?s=446326&p=index" alt="WebAnalytics" />
 </noscript></a>
 
 		</div>
