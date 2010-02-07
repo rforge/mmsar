@@ -26,6 +26,9 @@ Ratkowsky, D.A. (1983) Nonlinear regression modelling: a unified approach. Marce
 Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
 
 }
+\seealso{
+\code{\link{rssoptim}} ; \code{\link{multiSAR}} ; \code{\link{power}}
+}
 \examples{
 #loading the asymp model object before using it
 data(asymp)
