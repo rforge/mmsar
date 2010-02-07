@@ -43,7 +43,7 @@ data.gleas<br/>
 	</li>
 </ul></p>
 <br/>
-<p class="large">mmSAR provide some example data sets, for example to load a species-area dataset describing the plants of the Galapagos Islands (<a href="publications.html">Preston, 1962</a>) use : </p>
+<p class="large">mmSAR provide some example data sets, for example to load a species-area dataset describing the plants of the Galapagos Islands (<a href="publications.php">Preston, 1962</a>) use : </p>
 
 <div class="success">load(data.galap)</div>
 
