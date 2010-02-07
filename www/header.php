@@ -15,4 +15,4 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="author" content="francois Guilhaumon" />
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/style.css?rev=20&root=mmsar" media="screen" />

@@ -265,7 +265,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 }
 .archive-separator {margin: 0 0 14px;}
 
-.separator-vertical {background: url('img/separator-vertical.gif') repeat-y center top;}
+.separator-vertical {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/separator-vertical.gif?rev=24&root=mmsar') repeat-y center top;}
 
 
 /* 
@@ -360,7 +360,7 @@ ul.nice-list span {color: #666;}
 ------------------------------------------------------------------- */
 
 .box {
-	background: url('img/box.gif') no-repeat left top;
+	background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/box.gif?rev=24&root=mmsar') no-repeat left top;
 	border-bottom: 1px solid #DFDFDA;
 	border-top: 1px solid #FFF;
 	padding: 16px 20px 0;
@@ -419,15 +419,15 @@ div.comment-list {
 
 /* Header */
 
-#header-wrapper {background: #2F2F2F url('img/header.gif') repeat-x left top;}
-#header-wrapper-2 {background: url('img/header-wrapper-2.gif') repeat-y center top;}
+#header-wrapper {background: #2F2F2F url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/header.gif?rev=24&root=mmsar') repeat-x left top;}
+#header-wrapper-2 {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/header-wrapper-2.gif?rev=24&root=mmsar') repeat-y center top;}
 #header {
-	background: #333 url('img/header.gif') repeat-x left top;
+	background: #333 url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/header.gif?rev=24&root=mmsar') repeat-x left top;
 	padding: 32px 32px 0 46px;
 }
 
 #help-wrapper {
-	background: url('img/help.gif') no-repeat left top;
+	background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/help.gif?rev=24&root=mmsar') no-repeat left top;
 	height: 39px;
 	margin: -8px 0 0 auto;
 	width: 290px;
@@ -472,10 +472,10 @@ ul.tabbed li {
 }
 ul.tabbed a {text-decoration: none;}
 
-#navigation-wrapper {background: url('img/navigation.gif') repeat-x left top;}
-#navigation-wrapper-2 {background: url('img/navigation-wrapper-2.gif') no-repeat center top;}
+#navigation-wrapper {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/navigation.gif?rev=24&root=mmsar') repeat-x left top;}
+#navigation-wrapper-2 {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/navigation-wrapper-2.gif?rev=24&root=mmsar') no-repeat center top;}
 #navigation {
-	background: url('img/navigation.gif') repeat-x left top;
+	background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/navigation.gif?rev=24&root=mmsar') repeat-x left top;
 	min-height: 46px;
 	padding: 0 8px;
 }
@@ -489,14 +489,14 @@ ul.tabbed a {text-decoration: none;}
 }
 #navigation a:hover {color: #FFF;}
 #navigation li.current_page_item a, #navigation li.current_page_parent a {color: #FFE;}
-#navigation li.current_page_item a {background: url('img/navigation-arrow-2.gif') no-repeat center bottom;}
-#navigation li.current_page_parent a {background: url('img/navigation-arrow.gif') no-repeat center bottom;}
+#navigation li.current_page_item a {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/navigation-arrow-2.gif?rev=24&root=mmsar') no-repeat center bottom;}
+#navigation li.current_page_parent a {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/navigation-arrow.gif?rev=24&root=mmsar') no-repeat center bottom;}
 
 
 /* Subnav */
 
-#subnav-wrapper {background: #E9E9E9 url('img/subnav-wrapper.gif') repeat-x left bottom;}
-#subnav-wrapper-2 {background: url('img/subnav-wrapper-2.gif') no-repeat center bottom;}
+#subnav-wrapper {background: #E9E9E9 url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/subnav-wrapper.gif?rev=24&root=mmsar') repeat-x left bottom;}
+#subnav-wrapper-2 {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/subnav-wrapper-2.gif?rev=24&root=mmsar') no-repeat center bottom;}
 #subnav {padding: 0 8px;}
 
 #subnav a {
@@ -512,8 +512,8 @@ ul.tabbed a {text-decoration: none;}
 /* Content */
 
 .content {font-size: 1.1em;}
-#content-wrapper {background: #F6F6F6 url('img/content-wrapper.gif') repeat-y center top;}
-.content#content-two-columns {background: url('img/content-two-columns.gif') repeat-y left top;}
+#content-wrapper {background: #F6F6F6 url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/content-wrapper.gif?rev=24&root=mmsar') repeat-y center top;}
+.content#content-two-columns {background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/content-two-columns.gif?rev=24&root=mmsar') repeat-y left top;}
 
 
 /* Main */
@@ -541,7 +541,7 @@ ul.tabbed a {text-decoration: none;}
 /* Footer */
 
 #footer-wrapper {
-	background: url('img/footer-wrapper.gif') no-repeat center bottom;
+	background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/footer-wrapper.gif?rev=24&root=mmsar') no-repeat center bottom;
 	border-top: 1px solid #999;
 	padding-bottom: 20px;
 }
@@ -581,7 +581,7 @@ ul.tabbed a {text-decoration: none;}
 
 /* Featured Box */
 #featured-wrapper {
-	background: url('img/gradient-light.gif') repeat-x left bottom;
+	background: url('http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/www/img/gradient-light.gif?rev=24&root=mmsar') repeat-x left bottom;
 	border-bottom: 1px solid #E0E0E0;
 	padding-bottom: 22px;
 }
