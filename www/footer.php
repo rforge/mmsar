@@ -29,7 +29,7 @@
 		</div>
 
 		<div class="right">
-			<a href="http://templates.arcsin.se/">Website template</a> by <a href="http://arcsin.se/">Arcsin</a> 
+			<a href="http://templates.arcsin.se/" target="_new">Website template</a> by <a href="http://arcsin.se/" target="_new">Arcsin</a> 
 		</div>
 		
 		<div class="clearer">&nbsp;</div>
