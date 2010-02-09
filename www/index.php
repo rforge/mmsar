@@ -69,6 +69,7 @@
 						<div class="clearer">&nbsp;</div>
 
 						<ul class="nice-list">
+<li><span>2010-02-9 |</span> still a problem in the manpages ! Please download the <a href="http://r-forge.r-project.org/src/contrib/mmSAR_1.0.tar.gz">sources</a> to get the code :) </li>
 <li><span>2010-02-8 |</span> data sets manpages fix. The package should compile for windows on the 2010-02-9 </li>
 <li><span>2010-02-7 |</span> mmSAR online documentation launched.</li>
 <li><span>2010-02-6 |</span> Major update in mmSAR documentation files.</li>
