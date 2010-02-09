@@ -1,12 +1,8 @@
 \name{multiSAR}
 \Rdversion{1.1}
 \alias{multiSAR}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+\title{multiSAR}
+\description{multimodel averaging and non parametric confidence intervals calculation.
 }
 \usage{
 multiSAR(modelList = models, data = dat.F, nBoot = 1000, verb = T, crit = "Bayes")
