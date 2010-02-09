@@ -1,5 +1,5 @@
 <?php include('header.php'); ?> 
-	<title>mmSAR - an R package for the modelling of the Species-Area Relationship</title>
+	<title>mmSAR - a R package for the modelling of the Species-Area Relationship</title>
 </head>
 
 <body id="top">
@@ -19,7 +19,7 @@
 					
 						<h2>mm<span>SAR</span></h2><br/>
 
-						<p class="large">mmSAR is an <a href="http://www.r-project.org/R" target="_new">R</a> package for the modelling of the Species-Area Relationship (SAR).</p>
+						<p class="large">mmSAR is a <a href="http://www.r-project.org/R" target="_new">R</a> package for the modelling of the Species-Area Relationship (SAR).</p>
 
 						<p align="justify">The mmSAR package implements the multimodel SAR paradigm and provides ecologists with user friendly functions to fit SAR models and calculate multimodel SAR inference.</p>
 
@@ -43,6 +43,19 @@
 
 				<div class="col2 left">
 
+						<h2 class="left">Install the package</h2>
+											
+						<div class="clearer">&nbsp;</div>
+
+						<div class="content-separator"></div>
+						<p>To install mmSAR directly within R type:<br/> install.packages("mmSAR", repos="http://R-Forge.R-project.org")</p>
+<div class="clearer">&nbsp;</div>
+
+						<div class="content-separator"></div>
+						
+						<div class="clearer">&nbsp;</div>
+
+
 						<h2 class="left">Download the documentation</h2>
 											
 						<div class="clearer">&nbsp;</div>
@@ -61,6 +74,7 @@
 						
 						<div class="clearer">&nbsp;</div>
 
+
 				</div>
 
 				<div class="col2 right">
@@ -69,6 +83,7 @@
 						<div class="clearer">&nbsp;</div>
 
 						<ul class="nice-list">
+<li><span>2010-02-9 |</span> Found the problem in manpage. The package should definitely compile tonight.</li>
 <li><span>2010-02-9 |</span> still a problem in the manpages ! Please download the <a href="http://r-forge.r-project.org/src/contrib/mmSAR_1.0.tar.gz">sources</a> to get the code :) </li>
 <li><span>2010-02-8 |</span> data sets manpages fix. The package should compile for windows on the 2010-02-9 </li>
 <li><span>2010-02-7 |</span> mmSAR online documentation launched.</li>
