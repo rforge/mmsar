@@ -48,7 +48,7 @@
 						<div class="clearer">&nbsp;</div>
 
 						<div class="content-separator"></div>
-						<p>To install mmSAR directly within R type:<br/> install.packages("mmSAR", repos="http://R-Forge.R-project.org")</p>
+						<p class="large">To install mmSAR directly within R type:<br/> install.packages("mmSAR", repos="http://R-Forge.R-project.org")</p>
 <div class="clearer">&nbsp;</div>
 
 						<div class="content-separator"></div>
