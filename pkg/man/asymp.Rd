@@ -1,8 +1,9 @@
 \name{asymp}
+\Rdversion{0.1}
 \alias{asymp}
 \docType{data}
 \title{The asymptotic SAR regression model}
-\description{S == c - z * f^A}
+\description{}
 \usage{data(asymp)}
 \format{
   The format is:
@@ -18,11 +19,11 @@ List of 8
 }
 \details{This model is convex asymptotic. Parameter c is the upper asymptote. For further details and documentation please see the online documentation at http://mmsar.r-forge.r-project.org/
 }
-\source{Tjørve (2003).}
+\source{Tjorve (2003)}
 \references{
 Ratkowsky, D.A. (1983) Nonlinear regression modelling: a unified approach. Marcel Dekker, New York.
 
-Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
+Tjorve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
 
 }
 \seealso{

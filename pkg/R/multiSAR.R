@@ -1,5 +1,5 @@
 multiSAR <-
-function(modelList=c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull"),data,nBoot=999,verb=F,crit="Bayes") {
+function(modelList=c("power","expo","negexpo","monod","logist","ratio","lomolino","weibull"),data,nBoot=999,verb=FALSE,crit="Bayes") {
 
 library(numDeriv)
 
@@ -39,7 +39,7 @@ names(finalVect) <- pointsNames
 
 for (i in 1:nlig){
 
-	optimres = rssoptim(eval(parse(text=as.character(modelList[i]))),data,"lillie",graph,verb)
+	optimres = rssoptim(eval(parse(text=as.character(modelList[i]))),data,"lillie",verb)
 
 	for (j in 1:eval(parse(text=as.character(modelList[i])))$paramnumber) {optimResult[i,paste("p",j,sep="")] <- round(optimres$par[j],digits=dig)}
 	optimResult[i,"AIC"] <- round(optimres$AIC,digits=dig)
@@ -58,10 +58,10 @@ for (i in 1:nlig){
 	#jacobian and Hat Matrix
 	
 	#first data Point
-	jacob = jacobian( eval(parse(text=as.character(modelList[i])))$rssfun,optimres$par,data=data$data[1,],opt=F)
+	jacob = jacobian( eval(parse(text=as.character(modelList[i])))$rssfun,optimres$par,data=data$data[1,],opt=FALSE)
 
 	for (k in 2:nPoints) {
-	jacob = rbind(jacob,jacobian( eval(parse(text=as.character(modelList[i])))$rssfun,optimres$par,data=data$data[k,],opt=F))
+	jacob = rbind(jacob,jacobian( eval(parse(text=as.character(modelList[i])))$rssfun,optimres$par,data=data$data[k,],opt=FALSE))
 	}
 	
 	jacobbis <- t(jacob)%*%jacob
@@ -214,15 +214,15 @@ while (nGoodBoot < nBoot+1) {
 	#ICI le tryCatch
 	###########################################################
 
-	badBoot = F
+	badBoot = FALSE
 
-	optimres = tryCatch(rssoptim(eval(parse(text=as.character(modelList[k]))),data=list(name="bootSample",data=data.frame(a=data$data[[1]],s=bootMatrix[nGoodBoot,])),"lillie",graph,verb),error = function(e) {cat("Error from optim function, Swap the bootSample\n") ; list(convergence=999) } )
+	optimres = tryCatch(rssoptim(eval(parse(text=as.character(modelList[k]))),data=list(name="bootSample",data=data.frame(a=data$data[[1]],s=bootMatrix[nGoodBoot,])),"lillie",verb),error = function(e) {cat("Error from optim function, Swap the bootSample\n") ; list(convergence=999) } )
 
 	if (optimres$convergence != 0) {
-		badBoot=T
+		badBoot=TRUE
 	} else { 
 
-		if (sum(optimres$calculated)==0) { badBoot=T } else { 
+		if (sum(optimres$calculated)==0) { badBoot=TRUE } else { 
 			for (j in 1:eval(parse(text=as.character(modelList[k])))$paramnumber){optimBootResult[k,paste("p",j,sep=""),nGoodBoot] <- round(optimres$par[j],digits=dig)}
 			optimBootResult[k,"AIC",nGoodBoot] <- round(optimres$AIC,digits=dig)
 			optimBootResult[k,"AICc",nGoodBoot] <- round(optimres$AICc,digits=dig)
@@ -245,10 +245,10 @@ while (nGoodBoot < nBoot+1) {
 			
 	}#end of for k
 
-	if ( length(which(flags[,nGoodBoot]!="KO")) == 0 ) badBoot=T
-	if ( length(which(flags[,nGoodBoot]==0)) != 0 ) badBoot=T
+	if ( length(which(flags[,nGoodBoot]!="KO")) == 0 ) badBoot=TRUE
+	if ( length(which(flags[,nGoodBoot]==0)) != 0 ) badBoot=TRUE
 
-	if (badBoot == F) { 
+	if (badBoot == FALSE) { 
 			    #write the bootSample to a file
 			    #bootFileName = paste("bootSamp_",data$name,".txt",sep="")
 			    #bootText = paste("BootSample",nGoodBoot,"\n",sep="")

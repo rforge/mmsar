@@ -83,7 +83,7 @@ data(data.galap)
 data(power)
 
 #fitting the model with verbosity
-rssoptim(power,data.galap,verb=T)
+rssoptim(power,data.galap,verb=TRUE)
 
 
 

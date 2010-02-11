@@ -4,8 +4,7 @@
 \docType{data}
 \title{Arrhenius (1921)
 }
-\description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+\description{datas from Arrhenius (1921)
 }
 \usage{data(data.arr)}
 \format{

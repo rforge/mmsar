@@ -4,7 +4,7 @@
 \docType{data}
 \title{The power law SAR model}
 \description{s == c * a^z}
-\usage{The power model is an argument of the rssoptim function, it can be passed along with other models to the multiSAR function}
+\usage{data(power)}
 \format{
   The format is:
 List of 9

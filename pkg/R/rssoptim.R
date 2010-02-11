@@ -1,5 +1,5 @@
 rssoptim <-
-function(model,data,norTest="lillie",verb=T){
+function(model,data,norTest="lillie",verb=TRUE){
 
 ######################################################
 #                  INPUTS                            #   
@@ -62,7 +62,7 @@ function(model,data,norTest="lillie",verb=T){
 	}
 
 
-	res1=optim(startMod,rssfun,hessian=F,data=data,opt=T, method="Nelder-Mead", control=list(maxit=50000)) # CG SANN Nelder-Mead BFGS
+	res1=optim(startMod,rssfun,hessian=FALSE,data=data,opt=TRUE, method="Nelder-Mead", control=list(maxit=50000)) # CG SANN Nelder-Mead BFGS
 
 	#Backtransformation of parameters values
 
