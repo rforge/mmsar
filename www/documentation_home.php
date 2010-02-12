@@ -26,11 +26,11 @@
 <br/>
 							<h2 class="quiet">mmSAR overview</h2>
 						
-							<p class="large">mmSAR is a flexible and scalable implementation of the multimodel SAR framework for species-area datasets (<a href="publications.html">Guilhaumon et al. 2008</a>). </p>
+							<p class="large">mmSAR is a flexible and scalable implementation of the multimodel SAR framework for species-area datasets (<a href="publications.php">Guilhaumon et al. 2008</a>). </p>
 							
-							<p class="large">mmSAR implements the basic elements of the multimodel inference paradigm (<a href="publications.html">Burnham & Anderson, 2002</a>) with simple R list-objects and functions. The package is scalable and users can easily create their own model and data objects.</p>
+							<p class="large">mmSAR implements the basic elements of the multimodel inference paradigm (<a href="publications.php">Burnham & Anderson, 2002</a>) with simple R list-objects and functions. The package is scalable and users can easily create their own model and data objects.</p>
 							
-							<p class="large">If you are new to multimodel inference or non linear SAR fitting, a good start is the <a href="publications.html">Guilhaumon et al. (2008)</a> paper (freely available at the PNAS website), particularly the methods section and the supplementary material <a href="http://www.pnas.org/content/suppl/2008/10/01/0803610105.DCSupplemental/0803610105SI.pdf" target="_blank" title="link to supporting information at the PNAS website"><img src="pdf.png" alt="link to supporting information at the PNAS website" title="link to supporting information at the PNAS website" align="bottom" height="16" width="16"></a>.</p>
+							<p class="large">If you are new to multimodel inference or non linear SAR fitting, a good start is the <a href="publications.php">Guilhaumon et al. (2008)</a> paper (freely available at the PNAS website), particularly the methods section and the supplementary material <a href="http://www.pnas.org/content/suppl/2008/10/01/0803610105.DCSupplemental/0803610105SI.pdf" target="_blank" title="link to supporting information at the PNAS website"><img src="pdf.png" alt="link to supporting information at the PNAS website" title="link to supporting information at the PNAS website" align="bottom" height="16" width="16"></a>.</p>
 
 
 							<div class="error"><p class="large">In order to use mmSAR, a basic knowledge of R is expected. R and related documentations can be downloaded at 
