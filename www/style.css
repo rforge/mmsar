@@ -26,6 +26,21 @@ a img {border: none;}
 :focus {outline: 0;}
 
 
+
+a#tooCool {
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ display: block;
+ height: 80px;
+ width: 80px;
+ background: url(/path/to/image/too_cool.png) bottom right no-repeat;
+ text-indent: -999em;
+ text-decoration: none;
+ }
+
+
+
 /* 
    General 
 ------------------------------------------------------------------- */

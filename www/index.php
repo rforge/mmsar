@@ -3,7 +3,7 @@
 </head>
 
 <body id="top">
-
+<?php include('toCoolLink.php'); ?> 
 <?php include('head.php'); ?> 
 <?php include('nav.php'); ?> 
 
