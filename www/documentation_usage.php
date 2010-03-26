@@ -1,5 +1,5 @@
 <?php include('header.php'); ?>  
-	<title>mmSAR - Documentation - Home</title>
+	<title>mmSAR - Documentation - Usage</title>
 </head>
 
 <body id="top">
@@ -48,7 +48,7 @@ res <- rssoptim(expo,data.galap)<br/> </div><br/>
 							<p class="large">Multimodel SAR fits are obtained with the <a href="documentation_functions.php">multiSAR</a> function, this function takes for arguments a vector of character strings for model names and a <a href="documentation_datasets.php">data set object</a>. Further arguments are available (see <a href="documentation_functions.php">'Functions'</a>). A basic run :</p>
 		
 <div class="success">#loading all available models<br/>
-data(power)<br/>data(expo)<br/>data(negexpo)<br/>data(monod)<br/>data(ratio)<br/>data(logistic)<br/>data(lomolino)<br/>data(weibull)<br/><br/>
+data(power)<br/>data(expo)<br/>data(negexpo)<br/>data(monod)<br/>data(ratio)<br/>data(logist)<br/>data(lomolino)<br/>data(weibull)<br/><br/>
 #loading the Galapagos Islands plants data set (<a href="publications.php">Preston, 1962</a>)<br/>
 data(data.galap)<br/><br/>
 #creating a vector of model names<br/>
