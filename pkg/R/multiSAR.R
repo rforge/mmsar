@@ -16,7 +16,7 @@ if (length(isNull)!=0) {
 }#end of if isNull
 
 #matrix of optimisation results
-vars <- c("p1","p2","p3","AICc","D.AICc","AICcW","AIC","D.AIC","AICW","BIC","D.BIC","BICW","RSS","R2a","Norm Stat","Norm p.val","Pearson","Pea p.val") #,"t Test","t p.val"
+vars <- c("p1","p2","p3","AICc","D.AICc","AICcW","AIC","D.AIC","AICW","BIC","D.BIC","BICW","RSS","R2","Norm Stat","Norm p.val","Pearson","Pea p.val") #,"t Test","t p.val"
 dig=6 #digits
 optimResult = matrix(0,nlig,length(vars))
 colnames(optimResult) = vars
@@ -46,7 +46,7 @@ for (i in 1:nlig){
 	optimResult[i,"AICc"] <- round(optimres$AICc,digits=dig)
 	optimResult[i,"BIC"] <- round(optimres$BIC,digits=dig)
 	optimResult[i,"RSS"] <- round(optimres$value,digits=dig)
-	optimResult[i,"R2a"] <- round(optimres$R2a,digits=dig)
+	optimResult[i,"R2"] <- round(optimres$R2,digits=dig)
 	optimResult[i,"Norm Stat"] <- round(optimres$normaStat,digits=dig)
 	optimResult[i,"Norm p.val"] <- round(optimres$normaPval,digits=dig)
 	optimResult[i,"Pearson"] <- round(optimres$pearson,digits=dig)
@@ -228,7 +228,7 @@ while (nGoodBoot < nBoot+1) {
 			optimBootResult[k,"AICc",nGoodBoot] <- round(optimres$AICc,digits=dig)
 			optimBootResult[k,"BIC",nGoodBoot] <- round(optimres$BIC,digits=dig)
 			optimBootResult[k,"RSS",nGoodBoot] <- round(optimres$value,digits=dig)
-			optimBootResult[k,"R2a",nGoodBoot] <- round(optimres$R2a,digits=dig)
+			optimBootResult[k,"R2",nGoodBoot] <- round(optimres$R2,digits=dig)
 			optimBootResult[k,"Norm Stat",nGoodBoot] <- round(optimres$normaStat,digits=dig)
 			optimBootResult[k,"Norm p.val",nGoodBoot] <- round(optimres$normaPval,digits=dig)
 			optimBootResult[k,"Pearson",nGoodBoot] <- round(optimres$pearson,digits=dig)
