@@ -46,8 +46,7 @@ multiSAR(modelList = models, data = dat.F, nBoot = 9999, verb = TRUE, crit = "Ba
 \item bootSort : a matrix with "nBoot" rows containing the SORTED species richness from the mulimodel SAR. It is used to calculated the confidence interval using the percentil method.
 \item bootHat : a matrix with "nBoot" rows containing the species richness from the mulimodel SAR.
 \item bootMatrix : bootMatrix.
-
-\item IC : the inforamtion criterion used for model selection.
+\item IC : the information criterion used for model selection.
 }
 
 

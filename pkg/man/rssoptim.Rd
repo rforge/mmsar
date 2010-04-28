@@ -5,7 +5,7 @@
 \description{The rssoptim function is used to fit SAR models (as mmSAR model objects) to dataset (as mmSAR data objects). This function allow the optimisation of the model parameters, fitted values calculation, information criteria (AIC, AICc, BIC) and R² calculations and fit evaluation with residuals normality and homoscedasticity tests.
 }
 \usage{
-rssoptim(model, data, norTest = "lillie", verb = T)
+rssoptim(model, data, norTest = "lillie", verb = TRUE)
 }
 \arguments{
   \item{model}{A mmSAR model object representing the model to fit.
@@ -22,54 +22,54 @@ The rssoptim function is basically a wrapper for the optim R built-in function. 
 }
 \value{
 A list :
+\enumerate{
+\item $par : the parameters estimates.
 
-$par : the parameters estimates.
+\item $value : the value of the Residual Sum of Squares (RSS).
 
-$value : the value of the Residual Sum of Squares (RSS).
+\item $counts : number of iterations for the convergence of the fitting algorithm
 
-$counts : number of iterations for the convergence of the fitting algorithm
+\item $convergence : optim convergence code (only 0 is OK).
 
-$convergence : optim convergence code (only 0 is OK).
+\item $message : optim convergence message (only NULL is OK).
 
-$message : optim convergence message (only NULL is OK).
+\item $pearson : Pearson’s product moment correlation coefficient value.
 
-$pearson : Pearson’s product moment correlation coefficient value.
+\item $pearpval : Pearson’s product moment correlation coefficient p.value.
 
-$pearpval : Pearson’s product moment correlation coefficient p.value.
+\item $normaTest : residuals normality test used.
 
-$normaTest : residuals normality test used.
+\item $normaStat : residuals normality test statistic value.
 
-$normaStat : residuals normality test statistic value.
+\item $normaPval : residuals normality test statistic p.value.
 
-$normaPval : residuals normality test statistic p.value.
+\item $startvalues : starting values for the fitting algorithm.
 
-$startvalues : starting values for the fitting algorithm.
+\item $data : the data.
 
-$data : the data.
+\item $model : the mmSAR model object.
 
-$model : the mmSAR model object.
+\item $calculated : vector of fitted values.
 
-$calculated : vector of fitted values.
+\item $residuals : vector of residuals.
 
-$residuals : vector of residuals.
+\item $AIC : AIC value.
 
-$AIC : AIC value.
+\item $AICc : AICc value.
 
-$AICc : AICc value.
+\item $BIC : BIC value.
 
-$BIC : BIC value.
+\item $R2a : R² value.
 
-$R2a : R² value.
-
-$data.name : the name of the dataset (from the mmSAR data object).
-
+\item $data.name : the name of the dataset (from the mmSAR data object).
+}
 
 }
 
-\author{francois Guilhaumon
+\author{Francois Guilhaumon
 }
 
-\seealso{
+\seealso{\code{\link{multiSAR}}
 }
 
 \examples{
