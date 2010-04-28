@@ -11,7 +11,7 @@ nlig <- length(modelList)
 isNull = which(data$data[[2]]==0)
 
 if (length(isNull)!=0) {
-	cat("Dataset contained ",length(isNull)," zero abundance point(s) that was(were) deleted for analysis\n")
+	if(verb) cat("Dataset contained ",length(isNull)," zero abundance point(s) that was(were) deleted for analysis\n")
 	data$data = data$data[-isNull,]
 }#end of if isNull
 
@@ -83,7 +83,7 @@ names(matList) = modelList
 #Fitting validation
 flags <- vector("numeric",nlig)
 
-for (i in 1:nlig) { if (optimResult[i,"Norm p.val"]<0.05 || optimResult[i,"Pea p.val"]<0.05) {flags[i]<-"KO"} else {flags[i]<-"OK"}  } #|| optimResult[i,"t p.val"]<0.05
+for (i in 1:nlig) { if (optimResult[i,"Norm p.val"]<0.05 || optimResult[i,"Pea p.val"]<0.05) {flags[i]<-"KO"} else {flags[i]<-"OK"}  } 
 
 filtOptimResult <- subset(optimResult,flags=="OK")
 filtCalculated <- subset(calculated,flags=="OK")
@@ -254,7 +254,7 @@ while (nGoodBoot < nBoot+1) {
 			    #bootText = paste("BootSample",nGoodBoot,"\n",sep="")
 			    #cat(bootText,file = bootFileName,append=TRUE)
 			    #write(bootMatrix[nGoodBoot,], file = bootFileName,ncolumns= nPoints, append = TRUE, sep = " ")
-			    nGoodBoot = nGoodBoot + 1
+			    nGoodBoot <- nGoodBoot + 1
 	}#end of if badBoot
 }#end of while
 
@@ -283,7 +283,7 @@ for (k in 1:nBoot) {
 	if(crit == "Info") {
 		if ( (nPoints / 3) < 40 ) { IC = "AICc" } else { IC = "AIC"}
 		} else {
-		if(crit == "Bayes") { IC = "BIC" } else { stop("Criteria must be 'Info' for AIC/AICc or 'Bayes' for BIC")}
+		if(crit == "Bayes") { IC <- "BIC" } else { stop("Criteria must be 'Info' for AIC/AICc or 'Bayes' for BIC")}
 		}
 
 	if(verb) cat("Choosen criterion is ",IC,"\n")
@@ -327,7 +327,7 @@ cat("Bad boot: ",nBadBoot,"\n")
 
 bootSort=apply(bootHat,2,sort)
 
-res=list(data=data,models=modelList,optimRes=optimResult,filtOptimRes=filtOptimResult,calculated=calculated,filtCalculated=filtCalculated,averaged=finalVect,DeltaIC=DeltaICvect,akaikeweight=akaikeweightvect,avResiduals=avResiduals,shapAvRes=shapRes,corAvRes=cor,bootMatrix=bootMatrix,optimBootResult=optimBootResult,bootCalculated=bootCalculated,flags=flags,filtOptimBootResult=filtOptimBootResult,filtBootCalculated=filtBootCalculated,bootSort=bootSort,bootHat=bootHat,bootMatrix=bootMatrix,choosenModels=choosenModels,IC=IC) 
+res=list(data=data,models=modelList,optimRes=optimResult,filtOptimRes=filtOptimResult,calculated=calculated,filtCalculated=filtCalculated,averaged=finalVect,DeltaIC=DeltaICvect,akaikeweight=akaikeweightvect,avResiduals=avResiduals,shapAvRes=shapRes,corAvRes=cor,bootMatrix=bootMatrix,optimBootResult=optimBootResult,bootCalculated=bootCalculated,flags=flags,filtOptimBootResult=filtOptimBootResult,filtBootCalculated=filtBootCalculated,bootSort=bootSort,bootHat=bootHat,bootMatrix=bootMatrix,IC=IC) 
 
 invisible(res)
 
