@@ -1,9 +1,10 @@
 \name{power}
-\Rdversion{0.1}
+
 \alias{power}
 \docType{data}
 \title{The power law SAR model}
-\description{s == c * a^z}
+\description{\deqn{S = cA^{z}}{%
+s = c * a^z}}
 \usage{data(power)}
 \format{
   The format is:
@@ -23,7 +24,7 @@ List of 9
 \references{
 Arrhenius, O. 1921. Species and area. Journal of Ecology. 9: 95-99.
 
-Tjørve, E. (2003) Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
+Tjørve, E. 2003. Shapes and functions of species–area curves: a review of possible models. Journal of Biogeography, 30, 827–835.
 }
 \examples{
 #loading the power model object before using it
@@ -31,3 +32,4 @@ data(power)
 }
 \keyword{mmSAR model object}
 \keyword{non linear regression}
+

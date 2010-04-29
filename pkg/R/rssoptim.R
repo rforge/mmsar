@@ -1,15 +1,15 @@
 rssoptim <-
 function(model,data,norTest="lillie",verb=TRUE){
 
-######################################################
-#                  INPUTS                            #   
-######################################################
-#                                                    #
-# model: the model -list- (ex:  power)               #
-# data: the data -data.frame-                        #
-# norTest : shapiro OR lillie                        #
-# verb : print info in console?                      #
-######################################################
+####################################################
+#                  INPUTS                          #   
+####################################################
+#                                                  #
+# model: the model -list- (ex:  power)             #
+# data: the data -data.frame-                      #
+# norTest : shapiro OR lillie                      #
+# verb : print info in console?                    #
+####################################################
 
 	if (norTest == "lillie") library(nortest)
 
@@ -20,10 +20,10 @@ function(model,data,norTest="lillie",verb=TRUE){
 	if (verb){
  	   cat("**********************************\n")
  	   cat("----------------------------------\n")
-  	  cat("-FITTING: Residual Sum of Squares-\n")
+  	   cat("-FITTING: Residual Sum of Squares-\n")
  	   cat("< MODEL: ",model$name,">\n")
-  	  cat("<  DATA: ",data.name,">\n")
-  	  cat("----------------------------------\n")
+  	   cat("<  DATA: ",data.name,">\n")
+  	   cat("----------------------------------\n")
 	}
 
   	  l <- data[[2]]

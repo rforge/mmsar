@@ -74,6 +74,7 @@ A list :
 
 \examples{
 
+\dontrun{
 #FITTING THE POWER MODEL TO THE GALAPAGOS DATASET
 
 #loading the data
@@ -84,7 +85,7 @@ data(power)
 
 #fitting the model with verbosity
 rssoptim(power,data.galap,verb=TRUE)
-
+}
 
 
 }
