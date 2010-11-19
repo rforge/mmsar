@@ -35,7 +35,7 @@
 <br/>
 								<li>
 									<p class="large"><b>Guilhaumon, F</b>, Mouillot, D and Gimenez, O. 2010. mmSAR : an R-package for multimodel
-species-area relationship inference - <i>under review</i></p>
+species-area relationship inference - <i>ECOGRAPHY 33: 420-424</i></p>
 								</li>
 							</ul>
 <br/>
