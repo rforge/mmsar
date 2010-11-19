@@ -41,7 +41,7 @@ function(model,data,norTest="lillie",verb=TRUE){
 
 	#Transformed initial paramters
 	start <- model$init(data)
-	cat("start :", start,"\n")
+	if(verb){cat("start :", start,"\n")}
 
 	for (i in 1:length(start)) {
 		if(parLim[i]!="R"){
