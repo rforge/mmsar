@@ -43,7 +43,19 @@ function(model,data,norTest="lillie",verb=TRUE){
 	start <- model$init(data)
 	cat("start :", start,"\n")
 
-	for (i in 1:length(start)) { if(parLim[i]!="R"){if(start[i]<=0){ start[i]=0.1 } }  }	
+	for (i in 1:length(start)) {
+		if(parLim[i]!="R"){
+			if(start[i]<=0){
+				start[i]=0.1
+			}
+		} 
+		if(parLim[i]=="unif"){
+			if(start[i]>1){
+				start[i]=0.9
+			}
+		}		
+
+	}	
 
 	startMod = transLink(start,parLim)
     
