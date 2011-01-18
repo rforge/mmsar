@@ -37,7 +37,7 @@
 <div class="success">#loading the exponential model<br/>
 data(expo)<br/><br/>
 #loading the Galapagos Islands plants data set (<a href="publications.php">Preston, 1962</a>)<br/>
-data(data.glap)<br/><br/>
+data(data.galap)<br/><br/>
 #fitting the exponential model to the Galapagos dataset<br/>
 res <- rssoptim(expo,data.galap)<br/> </div><br/>
 
