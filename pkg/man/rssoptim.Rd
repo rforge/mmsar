@@ -33,6 +33,8 @@ A list :
 
 \item $message : optim convergence message (only NULL is OK).
 
+\item $sigConf : a p x 6 matrix with columns for the estimated coefficient, its standard error, t-statistic, corresponding (two-sided) p-value and lower & upper bounds of the 95% confidence interval.
+
 \item $pearson : Pearson’s product moment correlation coefficient value.
 
 \item $pearpval : Pearson’s product moment correlation coefficient p.value.

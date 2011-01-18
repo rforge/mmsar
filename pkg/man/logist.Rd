@@ -16,6 +16,7 @@ List of 8
  $ fun        : model function
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation
+ $ form       : a formula object for further calculations
 }
 \details{This model is sigmoid asymptotic. Parameter c is the upper asymptote. The function is symmetrical about the inflection point. The curve has a lower asymptote of zero, and the intersection with the y-axis depends on all three parameters. Thus it never goes through the origin.  For further details and documentation please see the online documentation at http://mmsar.r-forge.r-project.org/
 }

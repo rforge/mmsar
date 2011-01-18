@@ -16,6 +16,7 @@ List of 8
  $ fun        : model function
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation
+ $ form       : a formula object for further calculations
 }
 \details{The rational function model (Ratkowsky, 1990) is convex asymptotic. Each parameter in the model affects several curve aspects (shape, upper asymptote and y-axis intersection).
 }

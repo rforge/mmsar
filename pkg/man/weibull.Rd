@@ -17,6 +17,7 @@ List of 8
  $ fun        : model function
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation
+ $ form       : a formula object for further calculations
 }
 \details{The cumulative Weibull distribution (Weibull, 1951) is sigmoid asymptotic. Parameter C is the upper asymptote.It goes through the origin of axes.
 }

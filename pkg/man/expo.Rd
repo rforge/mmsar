@@ -16,6 +16,7 @@ List of 8
  $ fun        : model function
  $ rssfun     : Residual Sum of Squares function
  $ init       : initial values calculation
+ $ form       : a formula object for further calculations
 }
 \details{This model is convex non asymptotic. For further details and documentation please see the online documentation at http://mmsar.r-forge.r-project.org/
 }

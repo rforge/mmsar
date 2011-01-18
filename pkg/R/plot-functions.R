@@ -9,7 +9,7 @@
 #basic data plot
 plot.mmSAR.data <- function(x,...) {
 
-	plot(x$data,main=x$name,...)
+	plot(x$data,main=x$name,xlab="Area",ylab="Richness",...)
 }
 
 

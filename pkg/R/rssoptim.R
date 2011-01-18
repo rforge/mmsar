@@ -114,16 +114,51 @@ function(model,data,norTest="lillie",verb=TRUE){
 	#BIC
 	BIC = n *log(res1$value / n) + log(n) * P
 
+	res3 = list(AIC=AIC, AICc=AICc, BIC=BIC, R2=R2)
+
+	#estimates signifiance and confidence interval (95%)
+
+	#constructing a nlsModel object
+	nMod <- stats:::nlsModel(model$form,data,res1$par)
+
+	#number of parameters
+	p <- model$paramnumber
+
+	#residuals degrees of freedom
+	rdf <- n - p
+
+	#residuals variance
+	resvar <- res1$value / rdf
+
+	#calculating the inverse of the upper triangular factor
+	#of the gradient array at estimated parameter values
+	XtXinv <- chol2inv(nMod$Rmat())
+	dimnames(XtXinv) <- list(model$paramnames, model$paramnames)
+
+	#formating the table of estimates, standard eroor, t value and significance of parameters
+	se <- sqrt(diag(XtXinv) * resvar)
+    	tval <- res1$par/se
+    	param <- cbind(res1$par, se, tval, 2 * pt(abs(tval), rdf, lower.tail = FALSE))
+	dimnames(param) <- list(model$paramnames, c("Estimate", "Std. Error", 
+        "t value", "Pr(>|t|)"))
+
+	#95% confidence interval
+	conf <- matrix(c(param[,"Estimate"] - 2 * param[,"Std. Error"], param[,"Estimate"] + 2 * param[,"Std. Error"]),p,2)
+	colnames(conf) <- c("2.5%","97.5%")
+	
+	sigConf <- cbind(param,conf)
+
 	if(verb){
-     	   cat("----------FINAL VALUES-----------\n")
-    	    cat(res1$par,"\n")
-    	    cat("----------------------------------\n")
-     	   cat("RSS.value:",res1$value,"\n")
-     	   cat("----------------------------------\n")
+		cat("----------FINAL VALUES-----------\n")
+		print(sigConf)
+		cat("\n")
+		cat("----------------------------------\n")
+		cat("RSS.value:",res1$value,"\n")
+		cat("----------------------------------\n")
 		cat("------RESIDUALS NORMALITY --------\n")
 		if (norTest == "shapiro") {
- 		cat("Shapiro Test, W = ",normaTest$statistic,"\n")
-		cat("Shapiro Test, p.value = ",normaTest$p.value,"\n")
+			cat("Shapiro Test, W = ",normaTest$statistic,"\n")
+			cat("Shapiro Test, p.value = ",normaTest$p.value,"\n")
 		} else {
 			cat("Lilliefors Test, D = ",normaTest$statistic,"\n")
 			cat("Lilliefors Test, p.value = ",normaTest$p.value,"\n")
@@ -141,8 +176,7 @@ function(model,data,norTest="lillie",verb=TRUE){
 		cat("**********************************\n")
 	}#end of if verb
 
-    res3 = list(AIC=AIC, AICc=AICc, BIC=BIC, R2=R2)
-    res = c(res1,list(pearson=cor$estimate,pearpval=cor$p.value,normaTest=norTest,normaStat=normaTest$statistic,normaPval=normaTest$p.value),res2,res3,list(data.name=data.name))
+    res = c(res1,list(sigConf=sigConf,pearson=cor$estimate,pearpval=cor$p.value,normaTest=norTest,normaStat=normaTest$statistic,normaPval=normaTest$p.value),res2,res3,list(data.name=data.name))
    
 invisible(res)
 
