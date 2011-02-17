@@ -83,6 +83,8 @@
 						<div class="clearer">&nbsp;</div>
 
 						<ul class="nice-list">
+<li><span>2011-02-17 |</span>Package updated : The power, monod and logistic models were updated to allow for inital values calculations when some species richness values are zero.</li>
+<li><span>2011-02-11 |</span>Package updated : The 'rssoptim' function returns a new object ($sigConf). A matrix of estimated coefficients, their standard errors, t-statistic and corresponding (two-sided) p-value as well as lower & upper bounds of the 95% confidence interval.</li>
 <li><span>2010-02-9 |</span> Found the problem in manpage. The package should definitely compile tonight.</li>
 <li><span>2010-02-9 |</span> still a problem in the manpages ! Please download the <a href="http://r-forge.r-project.org/src/contrib/mmSAR_1.0.tar.gz">sources</a> to get the code :) </li>
 <li><span>2010-02-8 |</span> data sets manpages fix. The package should compile for windows on the 2010-02-9 </li>
