@@ -94,7 +94,7 @@ function(model,data,norTest="lillie",verb=TRUE){
 	normaTest = switch(norTest, "shapiro" = shapiro.test(residu) , "lillie" = lillie.test(residu) )
 
 	#Homogeneity of variance
-	cor <- cor.test(residu,data[[1]])
+	cor <- cor.test(residu^2,data[[1]])
 
 	#Calcul des criteres R2a, AIC, AICc, BIC
 
