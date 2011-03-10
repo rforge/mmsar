@@ -68,7 +68,7 @@ resAverage <- multiSAR(modelList=mods,data.galap)<br/> </div><br/>
 
 					<?php include('doc_nav.php'); ?>
 					
-					<div class="box">
+					<!--<div class="box">
 
 						<div class="box-title">Screenshots</div>
 
@@ -89,7 +89,7 @@ resAverage <- multiSAR(modelList=mods,data.galap)<br/> </div><br/>
 
 						</div>
 					
-					</div>
+					</div>-->
 
 					
 				</div>

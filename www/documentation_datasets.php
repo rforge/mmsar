@@ -60,7 +60,7 @@ data.gleas<br/>
 				<div id="sidebar">
 
 					<?php include('doc_nav.php'); ?>
-					<div class="box">
+			<!--<div class="box">
 
 						<div class="box-title">Screenshots</div>
 
@@ -81,7 +81,7 @@ data.gleas<br/>
 
 						</div>
 					
-					</div>
+					</div>-->
 
 					
 				</div>

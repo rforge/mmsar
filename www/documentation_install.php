@@ -45,7 +45,7 @@
 				<div id="sidebar">
 
 					<?php include('doc_nav.php'); ?>
-					<div class="box">
+					<!--<div class="box">
 
 						<div class="box-title">Screenshots</div>
 
@@ -66,7 +66,7 @@
 
 						</div>
 					
-					</div>
+					</div>-->
 
 					
 				</div>

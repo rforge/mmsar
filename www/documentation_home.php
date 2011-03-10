@@ -49,7 +49,7 @@ Although mmSAR is user friendly, the knowledge of some concepts such as <i>funct
 				<div id="sidebar">
 
 					<?php include('doc_nav.php'); ?>
-					<div class="box">
+					<!--<div class="box">
 
 						<div class="box-title">Screenshots</div>
 
@@ -70,7 +70,7 @@ Although mmSAR is user friendly, the knowledge of some concepts such as <i>funct
 
 						</div>
 					
-					</div>
+					</div>-->
 
 					
 				</div>
