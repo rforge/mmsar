@@ -62,9 +62,9 @@
 
 						<div class="content-separator"></div>
 
-						<a href="http://r-forge.r-project.org/plugins/scmsvn/viewcvs.php/*checkout*/pkg/inst/doc/mmSAR.pdf?rev=26&root=mmsar"><img src="PDF-icon.png" alt="" class="left bordered" /></a>
+						<a href="pdf/mmSAR.pdf"><img src="PDF-icon.png" alt="" class="left bordered" /></a>
 
-						<h3><a href="mmSAR.pdf">Download</a></h3>
+						<h3><a href="pdf/mmSAR.pdf">Download</a></h3>
 						
 						<p>Download the documentation as a PDF file.</p>
 
