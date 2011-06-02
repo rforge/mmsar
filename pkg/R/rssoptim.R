@@ -91,7 +91,29 @@ function(model,data,norTest="lillie",verb=TRUE){
 
 	#Residuals normality test
 
-	normaTest = switch(norTest, "shapiro" = shapiro.test(residu) , "lillie" = lillie.test(residu) )
+	if(normaTest=="lillie"){
+
+		if(length(l)<5) {
+
+			cat("WARNING : the Lilliefors test cannot be used with less than 5 data points -> switching to the Shapiro test \n")
+
+			normaTest="shapiro"
+
+		}#eo if length
+	}#eo if lillie
+
+	if(normaTest=="shapiro"){
+
+		if(length(l)<3) {
+
+			cat("WARNING : the Shapiro test cannot be used with less than 3 data points -> residuals normality will not be checked\n")
+
+			normaTest="null"
+
+		}#eo if length
+	}#eo if shapiro
+
+	normaTest = switch(norTest, "shapiro" = shapiro.test(residu) , "lillie" = lillie.test(residu) , "null"=list(statistic=NA,p.value=NA) )
 
 	#Homogeneity of variance
 	cor <- cor.test(residu^2,data[[1]])
