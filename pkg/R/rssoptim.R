@@ -91,24 +91,24 @@ function(model,data,norTest="lillie",verb=TRUE){
 
 	#Residuals normality test
 
-	if(normaTest=="lillie"){
+	if(norTest=="lillie"){
 
 		if(length(l)<5) {
 
 			cat("WARNING : the Lilliefors test cannot be used with less than 5 data points -> switching to the Shapiro test \n")
 
-			normaTest="shapiro"
+			norTest="shapiro"
 
 		}#eo if length
 	}#eo if lillie
 
-	if(normaTest=="shapiro"){
+	if(norTest=="shapiro"){
 
 		if(length(l)<3) {
 
 			cat("WARNING : the Shapiro test cannot be used with less than 3 data points -> residuals normality will not be checked\n")
 
-			normaTest="null"
+			norTest="null"
 
 		}#eo if length
 	}#eo if shapiro
