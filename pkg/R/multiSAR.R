@@ -228,7 +228,7 @@ while (nGoodBoot < nBoot+1) {
 	for (k in 1:nlig){
 		badBoot = FALSE
 
-		optimres = tryCatch(rssoptim(eval(parse(text=as.character(modelList[k]))),data=list(name="bootSample",data=data.frame(a=data$data[[1]],s=bootMatrix[nGoodBoot,])),norTest,verb),error = function(e) {cat("Error from optim function, Swap the bootSample\n") ; list(convergence=999) } )
+		optimres = tryCatch(rssoptim(eval(parse(text=as.character(modelList[k]))),data=list(name="bootSample",data=data.frame(a=data$data[[1]],s=bootMatrix[nGoodBoot,])),norTest,verb),error = function(e) { list(convergence=999) } )
 
 		if (optimres$convergence != 0) {
 			badBoot=TRUE
