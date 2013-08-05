@@ -37,6 +37,12 @@
 									<p class="large"><b>Guilhaumon, F</b>, Mouillot, D and Gimenez, O. 2010. mmSAR : an R-package for multimodel
 species-area relationship inference - <i>ECOGRAPHY 33: 420-424</i></p>
 								</li>
+<br/>
+<br/>
+								<li>
+									<p class="large">Basset Y, Cizek L, Cuénoud P, Didham RK, <b>Guilhaumon F</b>, Missa O, Novotny V, Ødegaard F, Roslin T, Schmidl J, Tishechkin AK, Winchester NN, Aberlenc H-P, Bail J, Barrios H, Bridle JR, Castaño-Meneses G, Corbara B, Curletti G, Debaker D, Delabie JHC, Dejean A, Fagan LL, Floren A, Kitching RL, Medianero E, Miller SC, de Oliveira EG, Orivel J, Pollet M, Ribeiro SP, Roisin Y, Roubik DW, Sorensen L and Leponce M. 2012. Arthropod Diversity in a Tropical Forest
+<i>Science 338 : 1481-1484 </i></p>
+								</li>
 							</ul>
 <br/>
 						<h2 class="quiet">References about multimodel inference and species-area relationships</h2><br/>
