@@ -3,7 +3,6 @@
 ##########################################
 
 #these functions are very basic and MUST be enhanced
-#this should be done for the S4 verison of mmSAR
 
 
 #basic data plot
