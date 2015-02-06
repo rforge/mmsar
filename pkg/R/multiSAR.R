@@ -7,7 +7,7 @@ function(modelList,data,nBoot=999,crit="Info",norTest="lillie",verb=FALSE) {
 # data : an mmSAR data object : a list (run data(data.galap)) for an example
 # nBoot : the number of bootstrap resamples
 # crit : "Info" or "Bayes"
-# norTest : "lillie" or "shapiro"
+# norTest : "lillie" or "shapiro" or "null"
 # verb : FALSE or TRUE
 #
 ##########################################################
@@ -105,7 +105,11 @@ names(matList) = modelList
 #Fit validation
 flags <- vector("numeric",nlig)
 
-for (i in 1:nlig) { if (optimResult[i,"Norm p.val"]<0.05 || optimResult[i,"Pea p.val"]<0.05) {flags[i]<-"KO"} else {flags[i]<-"OK"}  } 
+if(norTest!="null"){
+	for (i in 1:nlig) { if (optimResult[i,"Norm p.val"]<0.05 || optimResult[i,"Pea p.val"]<0.05) {flags[i]<-"KO"} else {flags[i]<-"OK"}  }
+}else{
+	flags <- rep("OK",nlig)
+}#eo ifelse
 
 filtOptimResult <- subset(optimResult,flags=="OK")
 filtCalculated <- subset(calculated,flags=="OK")
