@@ -1,5 +1,5 @@
 multiSAR <-
-function(modelList,data,nBoot=999,crit="Info",norTest="lillie",verb=FALSE) {
+function(modelList,data,nBoot=999,crit="Info",norTest="lillie",alpha=0.05,verb=FALSE) {
 
 ######## multiSAR : model selection and averaging function 
 #
@@ -8,6 +8,7 @@ function(modelList,data,nBoot=999,crit="Info",norTest="lillie",verb=FALSE) {
 # nBoot : the number of bootstrap resamples
 # crit : "Info" or "Bayes"
 # norTest : "lillie" or "shapiro" or "null"
+# alpha : level of tests for normality and homoscedasticity
 # verb : FALSE or TRUE
 #
 ##########################################################
@@ -106,7 +107,7 @@ names(matList) = modelList
 flags <- vector("numeric",nlig)
 
 if(norTest!="null"){
-	for (i in 1:nlig) { if (optimResult[i,"Norm p.val"]<0.05 || optimResult[i,"Pea p.val"]<0.05) {flags[i]<-"KO"} else {flags[i]<-"OK"}  }
+	for (i in 1:nlig) { if (optimResult[i,"Norm p.val"]<alpha || optimResult[i,"Pea p.val"]<alpha) {flags[i]<-"KO"} else {flags[i]<-"OK"}  }
 }else{
 	flags <- rep("OK",nlig)
 }#eo ifelse
@@ -251,10 +252,14 @@ while (nGoodBoot < nBoot+1) {
 				bootCalculated[k,,nGoodBoot] <- optimres$calculated
 
 				#Fitting validation
-				if (optimBootResult[k,"Norm p.val",nGoodBoot]<0.05 || optimBootResult[k,"Pea p.val",nGoodBoot]<0.05 || length(which(bootCalculated[k,,nGoodBoot]<0)) !=0 ) { flags[k,nGoodBoot]<-"KO"
-				} else {
-					flags[k,nGoodBoot]<-"OK"
-				}#end of if/else on Shap and Corr
+				if(norTest!="null"){
+					if (optimBootResult[k,"Norm p.val",nGoodBoot]<alpha || optimBootResult[k,"Pea p.val",nGoodBoot]<alpha || length(which(bootCalculated[k,,nGoodBoot]<0)) !=0 ) { flags[k,nGoodBoot]<-"KO"
+					} else {
+						flags[k,nGoodBoot]<-"OK"
+					}#end of if/else on Shap and Corr
+				}else{
+						flags[k,nGoodBoot]<-"OK"
+				}#eo if/else norTest!=NULL
 			}#end of if/else on convergence 2
 		}#end of if/else on convergence 1
 			
